@@ -1,0 +1,1006 @@
+* f9138bea 20210820
+* 98e6f169 write master code
+*   151a4ad9 Merge branch 'develop' into 'master'
+|\  
+| *   7b3799a0 Merge branch 'feature/2021-08-19-final-android' into 'develop'
+| |\  
+| | * 59f753f5 final notification
+| | * 9f51277c 2021 08 20
+| | * 5e5d61fa 20210820
+| | * 294d5b6b 2021 08 20
+| | * 5c7070c2 2021 08 20
+| | * e04a0ebc 2021 08 20
+| | * 8290a4ac write animation
+| | * 8aad9bc3 write upload camera photo
+| | * 2a84fc80 write season module
+| | * 72f30471 write season module
+| | * 31b36da3 write article module
+| | * d4f6ea95 write comment module
+| | * edb58c90 ok sign up
+| | * c81d34e3 write season module
+| | * 3f02b993 write comment moudle
+| | * 32185218 write season module upgrade
+| | * 0c2acf86 write season module
+| | * 555cd4b1 write fight ui module
+| | * 37d7bc6f write fight ui module
+| | * a7669c55 write detail module
+| * | f55fe960 2021-08-20 final
+| * |   cc28d7f3 Merge branch 'feature-ui' into 'develop'
+| |\ \  
+| | * | 2c854601 [frontend] add notification badge and modify ui design
+| |/ /  
+| * |   d201cdda Merge branch 'feature-modify' into 'develop'
+| |\ \  
+| | * | 5c47fd8a [frontend] ui flat
+| * | |   b7e4ab66 Merge branch 'QA/frontend' into 'develop'
+| |\ \ \  
+| | |/ /  
+| |/| |   
+| | * | 881f16e5 profile error
+| | * | 5722fb46 modify JoinDialog
+| |/ /  
+| * |   f4168822 Merge branch 'QA/frontend' into 'develop'
+| |\ \  
+| | |/  
+| |/|   
+| | * 77d884e3 modify error (profile, feedDetail)
+| | * 8d3436d1 search add hover
+| | * a3eb4a62 add hover
+| | * c9a3b404 modify profile
+| | *   71a18504 Merge branch 'huny07' into 'QA/frontend'
+| | |\  
+| | | * 3e61f7c9 finish search, fixed dialog error
+| | | * 2138b70d fixed bug
+| | |/  
+| | *   bd9d730b Merge branch 'huny06' into 'QA/frontend'
+| | |\  
+| | | * b5ee2f1d modify main design
+| | * |   2e204dc0 Merge branch 'huny06' into 'QA/frontend'
+| | |\ \  
+| | | |/  
+| | | * 8c8ef2ca modify profile
+| | | * d6623c5f 1:1battle
+| | | * 1e58bafd add img modify create chall
+| | | * dde544f1 design login signup
+| | |/  
+| | *   89d654b0 Merge branch 'huny05' into 'QA/frontend'
+| | |\  
+| | | * 51b7ffa7 modify auth
+| | | * d5ec857b add comment cr
+| | | * eddee3e7 fi final Join
+| | | * b1844b4b error comment, finish join
+| | * |   3bc47ec0 Merge branch 'feature-modifyLoginForm' into 'QA/frontend'
+| | |\ \  
+| | | |/  
+| | |/|   
+| | | * e01eb9ef [frontend] modify login page
+| | |/  
+| | *   6ea777b4 Merge branch 'huny04' into 'QA/frontend'
+| | |\  
+| | | * 76cefebf modify signup & add FeedDetailForm
+| | | * 92de945a article form & api
+| | | * 2fc1bdf3 modify signup
+| | | * 5f0180dc modify store
+| | | * 2003c074 modify login form
+| | | * f5bacbe5 modify auth and search ver2
+| | * |   8d684995 Merge branch 'feature-feedDesign' into 'QA/frontend'
+| | |\ \  
+| | | * | 6ea42c4d modify challengeIntroduceForm
+| | |/ /  
+| | * |   be483147 Merge branch 'huny04' into 'QA/frontend'
+| | |\ \  
+| | | |/  
+| | | * 1e3afb9a feed introduce
+| | | * e6842682 profile ver2
+| | | * 9d8b5d15 profile tab api
+| | | * 4766c799 main feed router
+| | |/  
+| * |   398c0220 Merge branch 'feature/2021-08-17-android' into 'develop'
+| |\ \  
+| | * | 5b5030ae write challenge module
+| | * | a1616131 write auth module
+| | * | a0332cbb modify detail ui module
+| | * | 65444dfd completed feed module
+| | * | f3b1bea9 completed search module
+| | * | ecff5345 write profile ui module
+| | * | f53589ff introduce createChallenge module
+| | * | 558ae6af modify fragment module
+| | * | 5916aae6 CreateChallengeFragment
+| | * | 43b6d2db modify fragment
+| | * | 037e504e apply ktlint
+| | * | a877db29 introduce search ui module
+| | * | c0612d06 gitflow-feature-stash: 2021-08-17-android
+| * | |   18f425a5 Merge branch 'QA/backend' into 'develop'
+| |\ \ \  
+| | * \ \   37ce70df Merge branch 'feature-org' into 'QA/backend'
+| | |\ \ \  
+| | | * | | 8b408633 [backend] organize
+| | * | | |   26c8da20 Merge branch 'feature/badge-image-initialize-API' into 'QA/backend'
+| | |\ \ \ \  
+| | | |/ / /  
+| | |/| | |   
+| | | * | | 9fd7350c [backend] 뱃지 이미지 삽입용 API
+| | |/ / /  
+| * | | |   f8a1d5ab Merge branch 'QA/backend' into 'develop'
+| |\ \ \ \  
+| | |/ / /  
+| | | / /   
+| | |/ /    
+| |/| |     
+| | * |   d7cf34eb Merge branch 'feature/API-error-correction' into 'QA/backend'
+| | |\ \  
+| | | * | 0a4e59ec [backend] API 2.0v
+| | | * | f654fa22 오타 수정
+| | | * | 762756c5 [backend] new API : challengeId로 상대방 챌린지 검색
+| | | * | 71c1e332 [backend] 댓글 작성 시 작성자가 챌린지 멤버인지 확인하는 로직
+| | | * | 8045fe08 [backend] article 생성 시 작성 시간 안 들어가는 에러
+| | | * | 0d20b6f5 [backend] badge image api - no user found logic
+| | |/ /  
+| * | | 82b409e4 apply spotless ktlint
+| * | |   779a3ff8 Merge branch 'QA/backend' into 'develop'
+| |\ \ \  
+| | |/ /  
+| | * |   0659ec43 Merge branch 'feature/badge-image-url-API' into 'QA/backend'
+| | |\ \  
+| | | * | e83046ab [backend] give 'first join' badge too when making challenge
+| | | * | 3a5a0266 [backend] new API : badge image into url response
+| | |/ /  
+| | * |   05cc8e29 Merge branch 'feature/image-handler-api' into 'QA/backend'
+| | |\ \  
+| | | * | 0395bfde [backend] saved image into url response api
+| | |/ /  
+| | * | 3ec2273e [backend] modify constants
+| * | |   8dd85545 Merge branch 'QA/backend' into 'develop'
+| |\ \ \  
+| | |/ /  
+| | * |   306b27e8 Merge branch 'feature/API-error-correction' into 'QA/backend'
+| | |\ \  
+| | | * | 70900255 [backend] NEW api : search challenge / article by userId
+| | |/ /  
+| * | |   f1f68f50 Merge branch 'QA/frontend' into 'develop'
+| |\ \ \  
+| | | |/  
+| | |/|   
+| | * | 457d8fe7 merge QA/frontend
+| | * |   78f16222 Merge branch 'huny03' into 'QA/frontend'
+| | |\ \  
+| | | * | a2289c67 search ver1
+| | | * | 1bd7e2e8 modify feed, introduce, recommend
+| | | * | 5faeec8b try catch modify
+| | | * | d924e5ae modify carousel ver2
+| | | * | df5e8426 modify carousel
+| | | * | da2d85e7 profile async
+| | | * | af1e3ee7 badge async
+| | | * | fe4e07e3 api branch processing
+| | | * | a8925c6e final notification api
+| | | * | 76b871bb recommend main api
+| | | * | df986e0a modify ranking
+| | * | |   38b42ba9 Merge branch 'feature/mainform-layout' into 'QA/frontend'
+| | |\ \ \  
+| | | |/ /  
+| | |/| |   
+| | | * | 4b27ca08 mainform-layout setting
+| | |/ /  
+| | * |   53fa3f8d Merge branch 'huny02' into 'QA/frontend'
+| | |\ \  
+| | | * | 969d7c3f final main new tab
+| | | * | 60fff9a9 popularTab finish
+| | | * | a0517247 modify main noti api code
+| | * | |   e014c173 Merge branch 'feature/ranking-axios' into 'QA/frontend'
+| | |\ \ \  
+| | | * | | 303d01e9 ranking axios
+| | * | | |   bf065766 Merge branch 'huny02' into 'QA/frontend'
+| | |\ \ \ \  
+| | | | |/ /  
+| | | |/| |   
+| | | * | | 85bf26b5 api profile ver1
+| | | * | | d8741b65 final login
+| | | * | | b8039c63 api createChallenge ver1
+| | | * | | 66ef5f63 login finally & cookies
+| | | * | | 099322b9 api popular ver2
+| | | * | | e0e4385a api populartab
+| | |/ / /  
+| | * | |   79edad3e Merge branch 'huny' into 'QA/frontend'
+| | |\ \ \  
+| | | * | | 94624705 modify login logout
+| | * | | |   9991aa43 Merge branch 'huny' into 'QA/frontend'
+| | |\ \ \ \  
+| | | |/ / /  
+| | | * | | e81b8ec9 token & modify login logout
+| | * | | |   134e2cc3 Merge branch 'featrue/front-badge' into 'QA/frontend'
+| | |\ \ \ \  
+| | | |_|/ /  
+| | |/| | |   
+| | | * | | fc1146d9 My badge layout
+| | |/ / /  
+| | * | |   0dd0d670 Merge branch 'huny' into 'QA/frontend'
+| | |\ \ \  
+| | | |/ /  
+| | | * | 6fc773a8 badge ver2
+| | * | | 8bb02697 badge ver2
+| | |/ /  
+| * | |   8a2728db Merge branch 'feature/2021-08-16-android' into 'develop'
+| |\ \ \  
+| | * | | c050425d write todo list
+| | * | | 4b9ad8b5 write event fragment
+| | * | | 5388f334 2021-08-16
+| | * | | 28302936 2021-08-16
+| | * | | 1b2f9375 write favorite module
+| | * | | 84959321 write ranking module change
+| | * | | 57a37670 modify rank module
+| | * | | 32d64061 modify notification
+| |/ / /  
+| * | | a392c6b0 write report
+| * | |   e0ab296e Merge branch 'QA/backend' into 'develop'
+| |\ \ \  
+| | | |/  
+| | |/|   
+| | * |   97aefd41 Merge branch 'feature/article-point-logic' into 'QA/backend'
+| | |\ \  
+| | | * | 5ec89009 [backend] article, image point calculation
+| | |/ /  
+| | * |   3a146d99 Merge branch 'feature/image-file-api' into 'QA/backend'
+| | |\ \  
+| | | * | 5cdbfd10 [backend] profile image, challenge image update api
+| | | * | 7669da2c [backend] image upload api
+| | |/ /  
+| | * |   0f5ff75a Merge branch 'feature-fwlist' into 'QA/backend'
+| | |\ \  
+| | | * | a66b2ff7 transmit follow list [2] with userinfo
+| | |/ /  
+| | * | 215148af [backend] Solved Recursive Reference
+| * | |   4f625d73 Merge branch 'feature/2021-08-13-android' into 'develop'
+| |\ \ \  
+| | |_|/  
+| |/| |   
+| | * | e74ca099 write favorite ui module
+| | * | 16c767ea modify profile section
+| | * | 1f41a5a2 modify favorite section
+| | * | 443d629c move profile code
+| | * | 0a38f381 write feed ui module and detail ui module
+| | * | e2c4c98f write project spec
+| | * | 0211fd5a write report
+| |/ /  
+|/| |   
+* | | 293063d6 delete .class
+| * |   645e64bf Merge branch 'feature-web16' into 'develop'
+| |\ \  
+| | * | 1ad0316f badge ver1
+| |/ /  
+|/| |   
+| * |   bb61d283 Merge branch 'QA/backend' into 'develop'
+| |\ \  
+|/ / /  
+| | _   
+| *   8962f5ef Merge branch 'feature-fwbadge' into 'QA/backend'
+| |\  
+| | * 7819dc86 get follow badge
+| * |   938b02b6 Merge branch 'feature/modify-article-comment-badge' into 'QA/backend'
+| |\ \  
+| | * | b44f4298 modify article&comment badge
+| |/ /  
+| * |   1045dfce Merge branch 'feature-followbadge' into 'QA/backend'
+| |\ \  
+| | |/  
+| |/|   
+| | * f1cf3d33 edit update user password salt
+| * |   5852d604 Merge branch 'feature/challenge-badge-events' into 'QA/backend'
+| |\ \  
+| | * | 107d970b [backend] badge award and notify method
+| |/ /  
+| * |   b204e500 Merge branch 'feature-yyerim' into 'QA/backend'
+| |\ \  
+| | |/  
+| |/|   
+| | * 1c4cba78 complete follow and unfollow
+| * |   0aed3a05 Merge branch 'feature/challenge-badge-events' into 'QA/backend'
+| |\ \  
+| | |/  
+| |/|   
+| | * 965f9229 [backend] badge awarding method
+| |/  
+| *   30376b60 Merge branch 'feature-follow' into 'QA/backend'
+| |\  
+| | *   a315f552 remove target
+| | |\  
+| | |/  
+| |/|   
+| * |   2c6a7a6c Merge branch 'feature/challenge-api' into 'QA/backend'
+| |\ \  
+| | * | 17a29101 [backend] challenge search by title, period, category
+| | * | b0994318 [backend] challenge search
+| | * | eaebce47 [backend] challenge search api
+| * | |   9e074614 Merge branch 'feature/BadgesUsers-controller' into 'QA/backend'
+| |\ \ \  
+| | * | | b9ff2c1f BadgesUsers Controller
+| |/ / /  
+| * | |   782ccf4f Merge branch 'feature/comment-badge' into 'QA/backend'
+| |\ \ \  
+| | * | | b64ae929 comment users-badges
+| | * | |   1ec15ad1 Merge branch 'QA/backend' of https://lab.ssafy.com/s05-webmobile2-sub3/S05P13B102 into QA/backend
+| | |\ \ \  
+| | | | | * cb26822f conflict...
+| | | | | * 824f3d96 add userid in response
+| | | | | * 7680e1f7 check email, nickname duplicate
+| | |_|_|/  
+| |/| | |   
+* | | | |   e70f9948 Merge branch 'develop' into 'master'
+|\ \ \ \ \  
+| * \ \ \ \   7edf4f5b Merge branch 'feature/2021-0811-android' into 'develop'
+| |\ \ \ \ \  
+| | * | | | | fce61082 write network interface code and modify Search model
+| | * | | | | eef2e686 write feed module and modify usecase
+| | * | | | | 2e69891a write fragment home
+| | * | | | | a039c70a write badge ui module
+| | * | | | | f6403b15 add resource code
+| | * | | | | 64e4f008 write notification module
+| | * | | | | 34a89d00 write feed ui module
+| | * | | | | 50352ff6 write pass code if app has token
+| | * | | | | a31be649 delete detailRepository
+| | * | | | | b65da8e8 modify navigation and camera vector image
+| | * | | | | 8198c76f write login fragment
+| | * | | | | 6af3feaf write ranking module
+| | * | | | | 951baab8 write sign up module
+| | * | | | | b44fada6 write badge module
+| | * | | | | 9167406f modify badge moudle
+| | * | | | | 57e49e79 modify notification part
+| | * | | | | 68cd2ae4 modify signup ui
+| | * | | | | 12325e2f remove dashboard ui
+| | * | | | | b08c2c05 write app module
+| | * | | | | ad7b4afe write data module
+| | * | | | | 3caca48c write domain module
+| | * | | | | d3081a0f modify build gradle
+| | * | | | | 37f94b1e write network code develop
+| | * | | | | d9651dd3 write layout and network code
+| * | | | | |   bdc36f13 Merge branch 'feature-web15' into 'develop'
+| |\ \ \ \ \ \  
+| | * | | | | | 127c430e token ver1
+| * | | | | | |   c3651ad6 Merge branch 'QA/backend' into 'develop'
+| |\ \ \ \ \ \ \  
+| | |/ / / / / /  
+| |/| | / / / /   
+| | | |/ / / /    
+| | |/| | | |     
+| | * | | | | 0878352b merge to develop
+| | * | | | |   4cf8383c edit WebConfig
+| | |\ \ \ \ \  
+| | |/ / / / /  
+| |/| | | | |   
+| * | | | | |   bdafb8e0 Merge branch 'feature-web14' into 'develop'
+| |\ \ \ \ \ \  
+| | |_|_|/ / /  
+| |/| | | | |   
+| | * | | | | 9b7d895c Login, signup logic modify
+| | * | | | | a48093fc make battleform
+| | * | | | | 68c9fad5 make certificationForm
+| | * | | | | c2bce05a make introduceform
+| * | | | | |   53047327 Merge branch 'feature-web14' into 'develop'
+| |\ \ \ \ \ \  
+| | |/ / / / /  
+| | * | | | | 4aedbd22 vuex store ver1
+| | * | | | | f72ca74e login api
+| | * | | | | c2db060f signup api
+| * | | | | |   31d93e0f Merge branch 'triplet02-develop-patch-27556' into 'develop'
+| |\ \ \ \ \ \  
+| | * | | | | | c5f76972 Update WebConfig.java
+| |/ / / / / /  
+| * | | | | |   044d997a Merge branch 'QA/backend' into 'develop'
+| |\ \ \ \ \ \  
+| | | |_|_|_|/  
+| | |/| | | |   
+| * | | | | |   1b3daf88 Merge remote-tracking branch 'origin/develop' into develop
+| |\ \ \ \ \ \  
+| | | |/ / / /  
+| | |/| | | |   
+| | * | | | |   668785ab Merge branch 'feature-web12' into 'develop'
+| | |\ \ \ \ \  
+| | | * | | | | 537ae62a signup api connect ver1
+| | | | |_|/ /  
+| | | |/| | |   
+| * | | | | | ac46fce7 [DevOps] modify devops setting
+| |/ / / / /  
+| * | | | | 55bb9835 modify webconfig for cors
+| * | | | | e66dca81 modify application.properties
+| * | | | |   81965d09 Merge branch 'QA/backend' into 'develop'
+| |\ \ \ \ \  
+| | |/ / / /  
+| |/| | | |   
+| * | | | |   81700dae Merge branch 'feature/2021-08-09-android' into 'develop'
+| |\ \ \ \ \  
+| | * | | | | 55c0de7c modify layout and fragment
+| | * | | | | f8c2b44c write navigation
+| | * | | | | 900c22d7 write all badge ui
+| | * | | | | 5b1129e3 write retrofit setting
+| | * | | | | ee924f6f write badge repository
+| | * | | | | e0f379f2 write badge response
+| | * | | | | 31158b1f write badge usecase
+| | * | | | | 1d65e1a0 write wignup fragment
+| | * | | | | 9dd2830c write profile feature
+| | * | | | | 1eae9a7f write login data
+| | * | | | | 3a7469ab write history module
+| | * | | | | 7d7acd1a write usecase module
+| | * | | | | 131e1377 write database module and historyRepository module
+| | * | | | | 521084ac write database module
+| | * | | | | 54f22f65 write report
+| | * | | | | a20383ec modify Dep
+| | * | | | | aea2d58b modify code for lint
+| | * | | | | 97f789f5 use spotless ktlint
+| | * | | | | 52fa23d8 modify gradle settings
+| * | | | | |   1a1d3b3f Merge branch 'feature-web10' into 'develop'
+| |\ \ \ \ \ \  
+| | * | | | | | f5689a95 challenge feed modify layout ver1
+| | * | | | | | e57c3f99 add user api setting
+| | * | | | | | 86f1d1b2 challenge-ranking
+| | * | | | | | f5f5a823 createfeed add router
+| | * | | | | | e1a34c9d create-feed
+| |/ / / / / /  
+| * | | | | |   8e4a288f Merge branch 'feature-web10' into 'develop'
+| |\ \ \ \ \ \  
+| | * | | | | | c2a6f5e5 modify profiletabform
+| | * | | | | | f025ec12 add vuex, axios
+| | * | | | | | b807db84 NewMainForm and RecommendMainForm
+| | * | | | | | 11f35300 add PopularMainForm
+| | * | | | | | cf1e36bf final followingDialog
+| | * | | | | | 4d0ecbb6 final userlistform
+| | | | | | * |   86dbcaab Merge branch 'feature-following2' into 'QA/backend'
+| | | | | | |\ \  
+| | | | | | | |/  
+| | | | | | |/|   
+| | | | | | | *   ac83dac3 Merge branch 'QA/backend' into 'feature-following2'
+| | | | | | | |\  
+| | | | | | | |/  
+| | | | | | |/|   
+| | | | | | * |   5b542136 Merge branch 'feature/user-badge' into 'QA/backend'
+| | | | | | |\ \  
+| | | | | |/ / /  
+| | | | | | * | 0eeee949 badges_users example
+| | | | | * | |   efb82790 Merge branch 'feature/challenge-api' into 'QA/backend'
+| | | | | |\ \ \  
+| | | | | | * | | 82392e34 [backend] no plain text response
+| | | | | |/ / /  
+| | | | |/| | |   
+| | | | | * | |   fa7e4656 Merge branch 'feature-following' into 'QA/backend'
+| | | | | |\ \ \  
+| | | | | | |/ /  
+| | | | | |/| |   
+| | | | | | * | 0f8085c0 edit user response
+| | | | | |/ /  
+| | | | |/| |   
+| | | | | * |   00a63af2 Merge branch 'feature/comment-update' into 'QA/backend'
+| | | | | |\ \  
+| | | | |/ / /  
+| | | | | * | e7ebc094 comment update & article detail
+| | | | |/ /  
+| | | | | * e085b415 resolve login error 500
+| | | | | * 4d61d769 resolve login 500 error
+| | | | |/  
+| | | | *   9d13bd0a Merge branch 'feature/swagger-test' into 'QA/backend'
+| | | | |\  
+| | | | | * dc0cf553 [backend] challenge PUT api 수정
+| | | | | * 6fed7100 [backend] challenge PUT api
+| | | | | * c8ead5f8 [backend] challenge random list api
+| | | | | * 99bad0d7 challenge api sort by point, startdate
+| | | | * |   f3dd915d Merge branch 'feature-userController' into 'QA/backend'
+| | | | |\ \  
+| | | | | * | 41d7a7c7 usercontroller-read,update,delete
+| | | | * | |   b3595072 Merge branch 'feature/article-comment-update' into 'QA/backend'
+| | | | |\ \ \  
+| | | | | * | | 706daf29 article-update
+| | | | |/ / /  
+| | | | * | |   e80f04cc Merge branch 'feature/article-swagger' into 'QA/backend'
+| | | | |\ \ \  
+| | | | | |_|/  
+| | | | |/| |   
+| | | | | * | 9daa88c1 article&comment CRD
+| | | | |/ /  
+| | | | * | 258f13ae article test
+| | |_|/ /  
+| |/| | |   
+| * | | |   ab8656e9 Merge branch 'QA/backend' into 'develop'
+| |\ \ \ \  
+| | * \ \ \   dbbf1250 Merge branch 'feature/swagger-test' into 'QA/backend'
+| | |\ \ \ \  
+| | | |_|_|/  
+| | |/| | |   
+| | | * | | 07a7fef9 database schema name
+| | |/ / /  
+| | * | | 9a4a5e4b reorganize branch
+| |/ / /  
+| * | |   71656a7d Merge branch 'QA/backend' into 'develop'
+| |\ \ \  
+| | |/ /  
+| |/| |   
+| | * |   afa323a0 Merge branch 'develop' into 'QA/backend'
+| | |\ \  
+| | |/ /  
+| |/| |   
+| * | |   7c409ced Merge branch 'feature-web09' into 'develop'
+| |\ \ \  
+| | |_|/  
+| |/| |   
+| | * | 49da676e add UserList & modify FollowerForm
+| | * | 7bb078be FollowerDialog
+| | * | ec1ea1e4 modify forms
+| * | |   3ab18366 Merge branch 'feature/2021-08-07-android' into 'develop'
+| |\ \ \  
+| | * | | 25ec3806 write tutorial and indicator
+| | * | | 5256167d add auth test
+| | * | | d5b68d94 modify splash activity and android manifest
+| | * | | b5fbd4ef write tutorial feature for user
+| |/ / /  
+| * | |   68403294 Merge branch 'backen-modify-ny-jaehyun' into 'develop'
+| |\ \ \  
+| | |/ /  
+| |/| |   
+| | * | c5641a3b modify backend database code
+| | | *   55aa4bb0 Merge branch 'QA/backend' of https://lab.ssafy.com/s05-webmobile2-sub3/S05P13B102 into QA/backend
+| | | |\  
+| | | | *   7ce2164e Merge branch 'feature-oauth2' into 'QA/backend'
+| | | | |\  
+| | | | | *   f1b5a2f5 conflict 손보기
+| | | | | |\  
+| | | | | |/  
+| | | | |/|   
+| | | | | * 8255ee02 edit application.properties
+| | | | | * 92515bae oauth 파일 추가
+| | | |_|/  
+| | |/| |   
+| | | * | dcddc87c swagger url auth
+| | | |/  
+| | | *   88c28df3 Merge branch 'feature/testcode' into 'QA/backend'
+| | | |\  
+| | | | *   0f073466 Merge branch 'QA/backend' into 'feature/testcode'
+| | | | |\  
+| | | | |/  
+| | | |/|   
+| | | * |   871afd46 Merge branch 'feature/article-crud' into 'QA/backend'
+| | | |\ \  
+| | | | * \   d2190d47 delete orange.iml
+| | | | |\ \  
+| | | | |/ /  
+| | | |/| |   
+| | | * | | f2eac4cf Delete orange.iml
+| | |/ / /  
+| | | * |   82e64b77 Merge branch 'QA/backend' into feature/article-crud
+| | | |\ \  
+| | | |/ /  
+| | |/| |   
+| | | * | c24b1a3d modify-applicationproperties
+| | | * | 99f5f27b article-test
+| | | | * 80fb4440 application properties
+| | | | * 4e28113a [QA] swagger 404 problem
+| | | | * 972eb00a 가독성 수정
+| | | | * 7210137d 실습코치님 피드백
+| | | | * a53f8557 [QA] user signup test
+| | | | * ebc20539 [QA/backend] testing users-challenges
+| | | | | * 344c4b96 2021 08 09
+| | | | | * 7d05c88f 2021 08 09 backend
+| | | |_|/  
+| | |/| |   
+| | * | | 6397e0db [QA] QA/backend revive
+| | |/ /  
+| | * |   927398ca Merge branch 'feature-oauth' into 'QA/backend'
+| | |\ \  
+| | | * | a619ad17 edit user test
+| | | * | 801ccc87 arrange files
+| | * | | ceff2e0e [QA] user signup test
+| |/ / /  
+| * | | f54fb6c2 Delete .gitlab-ci.yml
+|/ / /  
+* | |   b5f1ff5f Merge branch 'develop' into 'master'
+|\ \ \  
+| * \ \   4ad6f848 Merge branch 'QA/backend' into 'develop'
+| |\ \ \  
+| | | |/  
+| | |/|   
+| | * |   d15602c6 Merge branch 'feature-redis' into 'QA/backend'
+| | |\ \  
+| | | |/  
+| | |/|   
+| | | * 1ba69238 edit followingfollowerEntity
+| | |/  
+| | * 012029c5 [backend] modified ERD
+| | *   fcd3a4dd Merge branch 'feauture-jwt' into 'QA/backend'
+| | |\  
+| | | * 7fc1eec7 add jwtUtil
+| | * |   e4d025a2 Merge branch 'feature/register-challenge-test-code' into 'QA/backend'
+| | |\ \  
+| | | * | 95f2a5a9 [backend] QA : challenge 등록 & 매치메이킹 테스트 코드
+| | | * |   af369a7f Merge branch 'QA/backend' of https://lab.ssafy.com/s05-webmobile2-sub3/S05P13B102 into QA/backend
+| | | |\ \  
+| | | |/ /  
+| | |/| |   
+| | * | |   a27bc046 Merge branch 'feature/article-controller-service' into 'QA/backend'
+| | |\ \ \  
+| | | |_|/  
+| | |/| |   
+| | | * | 0e6d733c Settings Article-controller-service
+| | * | |   04880c3f Merge branch 'feature-login1' into 'QA/backend'
+| | |\ \ \  
+| | | * | | a035cbd6 Resolve Error of Signup
+| | | |/ /  
+| | * | |   e3feab27 Merge branch 'feature/report-controller' into 'QA/backend'
+| | |\ \ \  
+| | | * | | 8dae8d04 [backend] report controller
+| | |/ / /  
+| | * | |   df56d231 Merge branch 'feature/notification-controller' into 'QA/backend'
+| | |\ \ \  
+| | | |/ /  
+| | |/| |   
+| | | * | 00e7f714 [backend] report service
+| | | * | 470add15 [backend] notification controller & challenge business logic
+| | |/ /  
+| | * | 933acde5 [backend] modified project directory
+| | * |   3bbf6354 Merge branch 'feature-userCrudTest1' into 'QA/backend'
+| | |\ \  
+| | | * \   ada1308f add user
+| | | |\ \  
+| | | |/ /  
+| | |/| |   
+| | * | |   9e290dd2 Merge branch 'feature/badge-service-controller' into 'QA/backend'
+| | |\ \ \  
+| | | * | | 8083523e Settings Badge-controller
+| | | * | |   9087b361 Merge branch 'QA/backend' of https://lab.ssafy.com/s05-webmobile2-sub3/S05P13B102 into QA/backend
+| | | |\ \ \  
+| | * | \ \ \   cfe97cd0 Merge branch 'feature/challenge-controller' into 'QA/backend'
+| | |\ \ \ \ \  
+| | | * | | | | ef908080 [backend] modify challenge controller
+| | | * | | | | 9eb046ef [backend] logic for registering challenge
+| | | * | | | | c980f7e8 [backend] challenge service
+| | | | |/ / /  
+| | | |/| | |   
+| | | | | * | 32759057 [backend] complete add user
+| | | | | * | 1535381c success add user api test
+| | | |_|/ /  
+| | |/| | |   
+| | * | | |   0afaf020 Merge branch 'feature-user' into 'QA/backend'
+| | |\ \ \ \  
+| | | |/ / /  
+| | |/| | |   
+| | | * | | 722a3387 password salt
+| | | * | |   acf0a309 password salt
+| | | |\ \ \  
+| | | |/ / /  
+| | |/| | |   
+| | * | | | a4febc2b [backend] remove spring security dependency
+| | * | | | 117f5015 [backend] swagger example
+| | | * | | 5284fd62 password salt
+| | | * | | 133940a5 회원가입 시 비밀번호 암호화-salt
+| | | * | | 56349789 [backend] login test
+| | | * | | b4fe15fd [backend] login test
+| | |/ / /  
+| | * | | 7b3b4cd6 [backend] service, controller package
+| | * | | a1dfb840 [backend] QA : project directory structure
+| | * | |   60227523 Merge branch 'QA/backend' of https://lab.ssafy.com/s05-webmobile2-sub3/S05P13B102 into QA/backend
+| | |\ \ \  
+| | | * \ \   69591996 Merge branch 'feature-repo' into 'QA/backend'
+| | | |\ \ \  
+| | | | * | | c7db37cb SpringSecurityConfig 추가
+| | * | | | | c3d1e19b [backend] QA : articles-comments mapping
+| | |/ / / /  
+| | * | | | 5f2a99ae [backend] junit test setting
+| * | | | |   593c15b3 Merge branch 'feature-web08' into 'develop'
+| |\ \ \ \ \  
+| | * | | | | 6155b588 challenge ver3?
+| | * | | | | a0ff0902 modify login design
+| | * | | | | d58e1b21 search ver1
+| | * | | | | 514c9485 search ver1
+| | * | | | | 61708180 create chall ver3
+| | * | | | | ac52806a challengeForm ver2
+| * | | | | |   fd80510b Merge branch 'feature/2021-08-05-android' into 'develop'
+| |\ \ \ \ \ \  
+| | |/ / / / /  
+| |/| | | | |   
+| | * | | | | 2f86c462 write dashboard module and home module
+| | * | | | | 632375eb write navigation
+| | * | | | | 35aaae7f write view extensions
+| | * | | | | 765f775d write search moudle
+| |/ / / / /  
+| * | | | |   5dbc1e81 Merge branch 'feature-web07' into 'develop'
+| |\ \ \ \ \  
+| | * | | | | 9f9aa920 challenge ver 1
+| | * | | | | c3eacc6d nav hover and add tooltip
+| | * | | | | 88491834 add mainTab
+| | * | | | | 6f69b19a modify appheader
+| | * | | | | 3928d7ed notification ver1
+| | * | | | | ca48d8a3 badge ver2
+| | * | | | | fc348b0e signup add username
+| | * | | | | bae14ee6 carousel ver2
+| | * | | | | 88804a8a badge ver1
+| * | | | | |   7032eebc Merge branch 'feature/2021-08-04-android' into 'develop'
+| |\ \ \ \ \ \  
+| | * | | | | | 520c4b86 write dashboard fight dashboard
+| | * | | | | | 292f2515 write app module
+| | * | | | | | 166deaf8 write friend repository and usecase
+| | * | | | | | 899dab65 write friends
+| | * | | | | | 4eaa5d22 write detail and search module
+| | |/ / / / /  
+| * | | | | | ef6a792a Update .gitlab-ci.yml file
+| * | | | | | b7d0628d Update .gitlab-ci.yml file
+| | |_|_|_|/  
+| |/| | | |   
+| * | | | | ed39c492 Delete .gitlab-ci.yml
+| * | | | | 926c8812 Update .gitlab-ci.yml file
+| * | | | | 22355cb9 Update .gitlab-ci.yml file
+| * | | | | 2e5cc1f0 Update .gitlab-ci.yml file
+| * | | | | 4cecaeea Update .gitlab-ci.yml file
+| * | | | | 834d4402 Update .gitlab-ci.yml file
+| * | | | | eb9cbf2c Update .gitlab-ci.yml file
+| * | | | | aa8ec801 Update .gitlab-ci.yml file
+| * | | | | 5de4a481 Update .gitlab-ci.yml
+| * | | | | 605ca542 Update .gitlab-ci.yml file
+| * | | | | 0d69e502 Update .gitlab-ci.yml
+| * | | | | b836840f Update .gitlab-ci.yml
+| * | | | | 19d06af2 Update .gitlab-ci.yml
+| * | | | | c6ce8cde Update .gitlab-ci.yml
+| * | | | | ec1e5a55 Update .gitlab-ci.yml
+| * | | | | 29bfbeec 업데이트 backend/Dockerfile, .gitlab-ci.yml 파일
+| * | | | |   467e80ce Merge branch 'h00335-develop-patch-24679' into 'develop'
+| |\ \ \ \ \  
+| | * | | | | 2267f763 업데이트 .gitlab-ci.yml 파일
+| |/ / / / /  
+| * | | | | 2983a364 Delete .gitlab-ci.yml
+| * | | | | cc6c135e Update .gitlab-ci.yml
+| |/ / / /  
+| * | | |   8e55306b Merge branch 'feature/android-08-03' into develop
+| |\ \ \ \  
+| | * | | | 502eba9b lint total module
+| |/ / / /  
+| * | | | 2a4f4b85 delete file
+| * | | |   20821fea Merge branch 'feature-web06' into 'develop'
+| |\ \ \ \  
+| | * | | | 7a9a7fd5 profile form part2
+| | * | | | 5c6c047f profile-form part1
+| | * | | | fce69caf add layout
+| | * | | | 2d67b337 kakao login ver2
+| | |/ / /  
+| * | | | 7db6b5c4 업데이트 .nginx/Dockerfile, .nginx/default.conf 파일
+| * | | | b742dd60 업데이트 docker-compose.yml 파일
+| | |_|/  
+| |/| |   
+| * | |   13e96b1d Merge branch 'h00335-develop-patch-13850' into 'develop'
+| |\ \ \  
+| | * | | 4bb3b51e 업데이트 .gitlab-ci.yml, docker-compose.yml 파일
+| |/ / /  
+| * | |   0947589a Merge branch 'h00335-develop-patch-22228' into 'develop'
+| |\ \ \  
+| | * | | ec2dee31 업데이트 docker-compose.yml 파일
+| |/ / /  
+| * | | 7922a514 업데이트 docker-compose.yml 파일
+| * | | a66ab761 Update .gitlab-ci.yml file
+| * | | 21b75d26 Update .gitlab-ci.yml file
+| * | |   5e1ba316 Merge branch 'h00335-develop-patch-87761' into 'develop'
+| |\ \ \  
+| | * | | bea1ae17 업데이트 .gitlab-ci.yml 파일
+| |/ / /  
+| * | | 73137968 Update .gitlab-ci.yml file
+| * | | dfc18c04 Update .gitlab-ci.yml file
+| * | | 723addb7 docker settings
+| * | | b6f2ce43 Update .gitlab-ci.yml file
+| * | | cd8fc61a Update .gitlab-ci.yml file
+| * | | 2865dafb Update .gitlab-ci.yml file
+| * | | afa1fca2 Update .gitlab-ci.yml file
+| |/ /  
+| * |   4c7a586c Merge branch 'feature/2021-08-02-android' into 'develop'
+| |\ \  
+| | * | d8f2e862 write report
+| | * | 89c605ca write feature ui
+| | * | fa2b4f6a write domain module
+| | * | e0770e81 write data moudle
+| | * | 7c0a9990 write app module
+| |/ /  
+|/| |   
+| * |   5c0c6a91 Merge branch 'feature-web05' into 'develop'
+| |\ \  
+| | * | 1973a9f9 kakao login ver1
+| | * | ed15241b auth validate
+| | * | 74a0700a add vee-validate, modify login
+| |/ /  
+|/| |   
+| * |   2f37ac38 Merge branch 'QA/backend' into 'develop'
+| |\ \  
+|/ / /  
+| * |   5944048b Merge branch 'feature/entity_mapping' into 'QA/backend'
+| |\ \  
+| | |/  
+| |/|   
+| | * 31b43db4 [backend] jpa entity mapping
+| |/  
+| *   133b82df Merge branch 'feature/modify-entity' into 'QA/backend'
+| |\  
+| | * 41deafd2 0802 modify-entity badges articles
+| * |   ac49e51c Merge branch 'feature-entityReorganize' into 'QA/backend'
+| |\ \  
+| | |/  
+| |/|   
+| | * 375319a8 remove getter,setter
+| |/  
+| *   786c5b2e Merge branch 'feature-mapping' into 'QA/backend'
+| |\  
+| | * 5621cadf remove cache
+| * |   97077e1a Merge branch 'feature-mapping' into 'QA/backend'
+| |\ \  
+| | |/  
+| | * 3c175433 edit users, followerfollowing
+| | * e7c11c87 edit users, follow_tb
+| * |   d8e22d70 Merge branch 'feature/badge-articles-entity' into 'QA/backend'
+| |\ \  
+| | * | fd30d3aa badge-articles-entity setting
+| |/ /  
+| * |   f9bacd63 Merge branch 'feature/challenge-entities-repositories' into 'QA/backend'
+| |\ \  
+| | |/  
+| |/|   
+| | * a9bc4dc8 cache clear
+| | * 7b4764b6 entities and repositories
+| |/  
+| * 0c0a9dc0 [backend] QA branch init
+|/  
+*   440607cc 2021 08 02
+|\  
+| *   e13b9253 Merge branch 'feature/entity' into 'develop'
+| |\  
+| | *   38d55fee Merge branch 'develop' into 'feature/entity'
+| | |\  
+| | |/  
+| |/|   
+| * |   80e8df01 Merge branch 'hanjoi77-develop-patch-68595' into 'develop'
+| |\ \  
+| | * | a9cd83e3 Delete package-lock.json
+| * | |   dcc55f89 Merge branch 'feature-web04' into 'develop'
+| |\ \ \  
+| | * | | 327db716 0731 LoginForm
+| | * | | c919cb27 modify router, loginForm, signupForm
+| * | | |   c40c2f4b Merge branch 'feature-entityMapping' into 'develop'
+| |\ \ \ \  
+| | |_|/ /  
+| |/| | |   
+| | * | | fccfabec entity mapping
+| * | | |   6eeb68e7 Merge branch 'feature/20210801' into 'develop'
+| |\ \ \ \  
+| | * | | | 52e70c25 apply apotless ktlint
+| | * | | | d8a7aa79 write Ranking and RankingRepository
+| | * | | | 1ae394c1 write domain module
+| | * | | | 83c518d7 write notificationViewModel
+| | * | | | cf87fa55 write ui-season ranking module
+| | * | | | c54c520d apply spotless ktlint
+| | * | | | 873107c4 write main and build script
+| | * | | | e1cd02fa write auth module
+| | * | | | e07c6039 modify project configuration
+| | * | | | 11ac925f modify notification module
+| | * | | | e8e76c1c write data model Favorite
+| | * | | | 33626f5f write favoriteUseCase
+| | * | | | 366af9bd modify app module
+| | * | | | 80597350 modify ui-main module
+| |/ / / /  
+| * | | |   b9655027 Merge branch 'feature/20210731' into 'develop'
+| |\ \ \ \  
+| | * | | | 6ae63377 modify passwordConfirmation and kako login
+| | * | | | d4840c1e write signup page
+| | * | | | dddb92b9 introduce initialize module
+| | * | | | 91e3de36 modify project
+| | * | | | 89340b5e introduce season and ranking module
+| | * | | | 0b55f869 introduce theme Helper
+| | * | | | 408ab1c7 introduce commponent logger
+| | * | | | 2add9ed1 gitflow-feature-stash: 20210731
+| |/ / / /  
+| * | | |   4a9f12d8 Merge branch 'feature-user' into 'develop'
+| |\ \ \ \  
+| | |/ / /  
+| | | / /   
+| | |/ /    
+| |/| |     
+| | * | 814b05ba reorganize class name and variable name of entity
+| | * | c032cefa add user,notification,follow,report entity
+* | | |   7ae5dc81 Merge branch 'revert-215b0fdb' into 'master'
+|\ \ \ \  
+| * | | | 555d7613 Revert "Merge branch 'feature/entity' into 'master'"
+|/ / / /  
+* | | |   215b0fdb Merge branch 'feature/entity' into 'master'
+|\ \ \ \  
+| | |_|/  
+| |/| |   
+| * | | b5e090e2 delete class file
+| * | | 9c0aa27e 0802 Setting (Badge Article) Entity Repository
+| * | | b1f7a7c2 0729 Entity Badge Setting
+| | |/  
+| |/|   
+* | | 2414fd9d Delete .gitignore
+* | | 949a921f Delete package-lock.json
+| |/  
+|/|   
+* |   e9397ca0 Merge branch 'develop' into 'master'
+|\ \  
+| * \   f128649b Merge branch 'feature-web03' into 'develop'
+| |\ \  
+| | * | 1e7aa4b6 carousel ver1
+| | * | 3079c716 navbar ver1
+| | * | 77474a33 07/29 not found page
+| * | |   93702b9b Merge branch 'feature/2021-07-29-android-4' into 'develop'
+| |\ \ \  
+| | |_|/  
+| |/| |   
+| | * | 9e53aa5f write report
+| | * | 6b554453 write splash layout and notification layout
+| | * | 593a00b8 write report
+| | |/  
+| * |   9f32330b Merge branch 'feature/jpa' into 'develop'
+| |\ \  
+| | * | 44b9e485 [backend] jpa dependency
+| |/ /  
+| * |   bf0870d7 Merge branch 'feature/swagger' into 'develop'
+| |\ \  
+| | |/  
+| |/|   
+| | * 28ae0c30 gitignore update
+| | * 1a782cd2 [backend] swagger-ui setting
+| |/  
+| *   b56dd6d6 Merge branch 'feature-web02' into 'develop'
+| |\  
+| | * 2047da7a auth-page, 404-page, navbar
+| * |   f7a5ced7 Merge branch 'feature/2021-07-28-android-3' into 'develop'
+| |\ \  
+| | |/  
+| |/|   
+| | * 0aa9025d apply ktlint
+| | * ca9de061 write daily report
+| | * a5799f0a introduce android logger and fcm with push server
+| | * c04538f9 introduce retrofit for restAPI
+| | * 51742eb0 update build gradle
+| | * 808b454d write dark theme code
+| | * 193089ef write darktheme code
+| | * e84c5a7d write nofication with FCM
+| | * 83321a74 change gradle setting
+| | * 4cedb8b7 modify schedule
+| | * 8409742d delete wildcard import and introduce ktlint
+| |/  
+| * 3b23a8dd Delete .gitignore
+| * a5f059fd Delete .gitignore
+| *   9ca1e0af Merge branch 'feature/web-feature-1' into 'develop'
+| |\  
+| | * 631a8e0e modify directory & add router
+| * |   ed9ac34b Merge branch 'feature/android-feature-2' into 'develop'
+| |\ \  
+| | |/  
+| |/|   
+| | * 6b33033f write report
+| | * 53700b65 modify dependencies and kakao login
+| | * 6a723876 write ui-season module
+| | * ceb3f298 write ui-auth module
+| | * 448f026b write domain module
+| | * 9a12930f write data module
+| | * a075c56c write feed module
+| | * 2399a1b5 write fight module
+| | * e60d3827 modify app theme and write ContextExtensions
+| | * be56f551 write notification code
+| | * e51a1637 write notification layout
+| | * 9dac709b introduce notification repository and usecase
+| * | dedcf72c frontend skeleton code
+| |/  
+| *   93b5bd61 Merge branch 'feature/2021-07-26-android-1' into 'develop'
+| |\  
+| | * 390fab3e Feature/2021 07 26 android 1
+| |/  
+| * 89495342 [backend] spring-boot skeleton structure
+| * b4136cad update report
+| * 1c587556 gitflow-feature-stash: report
+* |   a10230c8 Merge branch 'revert-a39fed56' into 'master'
+|\ \  
+| * | 46a6526b Revert "Merge branch 'feature/2021-07-26-android-1' into 'master'"
+|/ /  
+* |   a39fed56 Merge branch 'feature/2021-07-26-android-1' into 'master'
+|\ \  
+| |/  
+|/|   
+| * 50afc455 Feature/2021 07 26 android 1
+|/  
+*   db7e68fd Merge branch 'release/2021-07-22-2'
+|\  
+| * 991e98f3 write main readme
+|/  
+*   b78af07b Merge branch 'release/20210722'
+|\  
+| * 1ef18c8d write main readme
+|/  
+* 83815547 업데이트 mobile/README.md, frontend/README.md, backend/README.md 파일
+* bc2fc40e 업데이트 README.md 파일

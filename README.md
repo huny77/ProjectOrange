@@ -2,13 +2,25 @@
 
 [toc]
 
+# 팀원
+
+![image-20210820131039043](README.assets/image-20210820131039043.png)
+
 ## 기술 스택 정리
 
-![기술 스택](./README.assets/기술 스택.png)
+![image-20210820130539214](README.assets/image-20210820130539214.png)
+
+## SCM Git Flow
+
+![image-20210820132713651](README.assets/image-20210820132713651.png)
+
+
+
+## Firebase Monitoring
+
+![image-20210820132818263](README.assets/image-20210820132818263.png)
 
 ## 프로젝트 기능 리스트 업
-
-
 
 ```
 📦 경쟁 컨텐츠
@@ -63,6 +75,53 @@
 ```
 
 
+
+## 메인 화면
+
+![image-20210820130847744](README.assets/image-20210820130847744.png)
+
+## Mobile
+
+![image-20210820132329313](README.assets/image-20210820132329313.png)
+
+![image-20210820132440625](README.assets/image-20210820132440625.png)
+
+![image-20210820132556079](README.assets/image-20210820132556079.png)
+
+
+
+- Minimum SDK level 24
+
+- [Kotlin](https://kotlinlang.org/) based, [introducing Coroutines](https://github.com/Kotlin/kotlinx.coroutines)
+
+- JetPack
+
+  - LiveData - notify domain layer data to views.
+  - Lifecycle - dispose of observing data when lifecycle state changes.
+  - ViewModel - UI related data holder, lifecycle aware.
+  - Room Persistence - construct a database using the abstract layer.
+  - RecyclerView + RecyclerView .Selection
+  - Hilt (DI)
+
+- Architecture
+
+  - MVVM Architecture 
+  - etc ViewBinding
+  - Clean Architecture
+
+- [Retrofit2 & OkHttp3](https://github.com/square/retrofit) - construct the REST APIs and paging network data.
+
+- [Timber](https://github.com/JakeWharton/timber) - logging.
+
+- [Material-Components](https://github.com/material-components/material-components-android) - Material design components like ripple animation, cardView.
+
+- [Firebase](https://firebase.google.com/) - Crashlytics, Analytics, and in AppMessaging
+
+- [spotless](https://github.com/diffplug/spotless) - for ktlint
+
+- [Git](https://git-scm.com/) - for scm with Git flow strategy
+
+  
 
 ## 프로젝트 일정
 
