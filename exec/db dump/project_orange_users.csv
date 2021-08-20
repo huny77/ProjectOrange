@@ -1,0 +1,9 @@
+user_id,email,nickname,password,token,profile_image_path,salt,username,role
+17,test33@naver.com,테스트33,$2a$10$Z9fScIK6d1CPSCZhJuZVuug7UQ6RFFl0iIj553iwhF2LmJ8oNBGVO,,210819/ed9e1785-8372-4b5a-a950-871028b44339.jfif,10,테스트33,
+18,test5,5555,$2a$10$XV8FfmVahPIl8EIcCvYnneCp5ZN7.Qa/4aMdOTa7dT7J41DYhktvi,,,9,5555,
+19,"","",$2a$10$brFDeRnhJDw4jaqvNpiTuO1wkSr3.WgnpJ/2YURT9NNBV31rgalIm,,,11,"",
+23,bam03196@naver.com,헬로,$2a$10$0ryDx02x1X5L21LOI999iugH6LTMW2Bv53EWQynBxxaIQLWHmrase,,,15,헬로,
+25,test789@naver.com,테스트789,$2a$10$t7RRHtjeg2jtYNR//31.3O0c8taOZpHQjU68UwEnJKkpzN80gt5wm,,,17,테스트789,
+26,bam03196@gmail.com,야호,$2a$10$hbO6XqzL1FhRXtnV5qFPFeGWQ1uU0zw9IplMOI33fij/zrP616vsW,,,18,야호,
+27,hello@ssafy.com,안녕싸피,$2a$10$WMYOEha9IcBl.YitWrvZcu/eZY6K8huFyQSaWqY6OffPDx6S0Mtza,,,19,안녕싸피,
+29,ssafy@ssafy.com,싸피,$2a$10$Rtx9nqNnvgOJkMX7B3qpEuueNsbyGuB1ZhJ8tBFrZTyXYrM1jg9dS,,,21,네이버,
