@@ -9,5 +9,7 @@ import java.util.List;
 
 @Repository
 public interface ChallengesRepository extends JpaRepository<Challenges, Long> {
-    public List<Challenges> findAllByPeriodId(Long id);
+    public List<Challenges> findAllByPeriodId(Long periodId);
+    public List<Challenges> findAllByChallengeTitleContaining(String searchTitle);
+    public List<Challenges> findAllByCategoryId(Long categoryId);
 }

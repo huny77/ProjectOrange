@@ -1,6 +1,5 @@
 package com.keelim.orange.ui.home
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -12,7 +11,6 @@ import androidx.navigation.fragment.findNavController
 import com.keelim.orange.R
 import com.keelim.orange.common.toast
 import com.keelim.orange.databinding.FragmentHomeBinding
-import com.keelim.orange.ui.auth.AuthActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

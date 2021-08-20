@@ -1,7 +1,14 @@
 package com.project.orange.controller.article;
 
+import com.project.orange.entity.article.Articles;
 import com.project.orange.entity.article.Comments;
+import com.project.orange.entity.challenge.Challenges;
+import com.project.orange.entity.user.UsersChallenges;
+import com.project.orange.repository.user.UsersChallengesRepository;
+import com.project.orange.service.article.ArticlesService;
 import com.project.orange.service.article.CommentsService;
+import com.project.orange.service.challenge.ChallengeService;
+import com.project.orange.service.user.UserService;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -17,6 +24,15 @@ public class CommentsController {
     @Autowired
     private CommentsService commentsService;
 
+    @Autowired
+    private ArticlesService articlesService;
+
+    @Autowired
+    private ChallengeService challengeService;
+
+    @Autowired
+    private UsersChallengesRepository usersChallengesRepository;
+
     @ApiOperation(value = "모든 댓글 목록", notes = "<big>모든 댓글</big>의 <big>목록</big> 반환")
     @GetMapping("/list")
     public ResponseEntity<List<Comments>> selectAll(){
@@ -31,6 +47,17 @@ public class CommentsController {
 
     @PostMapping("/create")
     public ResponseEntity<String> createComment(@RequestBody Comments comments) {
+
+        Long targetUserId = comments.getUser();
+        Long targetArticleId = comments.getArticle();
+        Articles targetArticle = articlesService.selectOne(targetArticleId).get();
+        Challenges targetChallenge = challengeService.selectByChallengeId(targetArticle.getChallenge()).get();
+        Long targetChallengeId = targetChallenge.getChallengeId();
+
+        if(usersChallengesRepository.findByUserUserIdAndChallengeChallengeId(targetUserId, targetChallengeId).isEmpty()){
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
+
         Optional<Comments> createdComment;
         createdComment = commentsService.createComment(comments);
 

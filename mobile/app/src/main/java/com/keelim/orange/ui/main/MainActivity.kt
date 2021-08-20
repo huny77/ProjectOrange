@@ -4,7 +4,6 @@ import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
-import androidx.navigation.ui.setupWithNavController
 import com.keelim.orange.R
 import com.keelim.orange.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint

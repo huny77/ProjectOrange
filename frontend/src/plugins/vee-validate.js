@@ -82,5 +82,6 @@ extend('FeedTitle', {
     }
   }
 })
+
 Vue.component('ValidationObserver', ValidationObserver)
 Vue.component('ValidationProvider', ValidationProvider)

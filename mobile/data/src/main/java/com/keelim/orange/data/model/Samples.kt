@@ -1,5 +1,7 @@
 package com.keelim.orange.data.model
 
+import com.keelim.orange.data.model.entity.History
+
 data class Sample(
   val name: String,
   val courses: Int,

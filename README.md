@@ -69,65 +69,64 @@
 ```mermaid
 gantt
     dateFormat  MM-DD
-    title       오렌지팀
+    title       project_orange
 
     section 기획
     주제 선정				  :done, 07-19, 3d
-    기능 목록 상세 도출			:done, 07-19, 3d
+    기능 목록 상세 도출		    :done, 07-19, 3d
     화면 기획				  :done, 07-21, 4d
     개발 환경 구성             :done, 07-22, 5d
 	
 	section Frontend
     notification		  	:done, 07-26, 5d
-    auth	 :done, 07-28, 5d
-	develp->master :done, 07-29,1d
-    profile	 	 		:done, 08-02,5d
-    feed   	  		:done, 08-04, 4d
-   	develp->master :done, 08-05,1d
-    develp->master :done, 08-12,1d
-	Challange		 	   :done, 08-06,7d
-	search                 :done, 08-12, 2d
-	sync (unit)                   :done, 08-14, 2d 
+    auth	 				:done, 07-28, 5d
+	develp->master 			:done, 07-29, 1d
+    profile	 	 			:done, 08-02, 5d
+    feed   	  				:done, 08-04, 4d
+   	develp->master 			:done, 08-05, 1d
+    develp->master 			:done, 08-12, 1d
+	Challange		 	   	:done, 08-06, 7d
+	search					:done, 08-12, 2d
+	api-sync 				:done, 08-11, 7d
+
 	
     section Mobile
-    Feed		  	:done, 07-26, 5d
-    notification	 :done, 07-28, 5d
-   	FCM              :done, 07-28, 5d
-    develp->master :done, 07-29,1d
-    develp->master :done, 08-05,1d
-    develp->master :done, 08-12,1d
-	auth   	  		:done, 07-31, 4d
-	aws ec2 setting  :done, 08-03, 2d
-    profile	 	 		:done, 08-02,5d
-	Challange		 	   :done, 08-06,7d
-	search                 :done, 08-12, 2d
-	sync (unit)                   :done, 08-14, 2d 
+    Feed		  			:done, 07-26, 5d
+    notification			:done, 07-28, 5d
+   	FCM						:done, 07-28, 5d
+    develp->master			:done, 07-29, 1d
+    develp->master			:done, 08-05, 1d
+    develp->master			:done, 08-12, 1d
+	auth   	  				:done, 07-31, 4d
+    aws ec2 setting 		:done, 08-03, 2d
+    profile					:done, 08-02, 5d
+	Challange				:done, 08-06, 7d
+	search					:done, 08-12, 2d
+    api-sync 				:done, 08-11, 7d
+
 	
     section Backend
-    auth   	  		:done, 07-27, 4d
-    JPA 학습 			:done, 07-28, 4d
-    profile	 	 		:done, 07-28,5d
-    develp->master :done, 07-29,1d
-    develp->master :done, 08-05,1d
-    develp->master :done, 08-12,1d
-    search                 :done, 08-01, 3d
-    contrller level :done, 08-02, 7d
-    Feed		  	:done, 08-01, 5d
-    notification	 :done, 08-03, 5d
-	Challange		 	   :done, 08-06,9d
-	sync (unit)                   :done, 08-14, 2d 
+    auth   	  				:done, 07-27, 4d
+    JPA 학습 			  	   :done, 07-28, 4d
+    profile	 	 			:done, 07-28, 5d
+    develp->master 			:done, 07-29, 1d
+    develp->master 			:done, 08-05, 1d
+    develp->master 			:done, 08-12, 1d
+    search					:done, 08-01, 3d
+    contrller level 		:done, 08-02, 7d
+    Feed		  			:done, 08-01, 5d
+    notification	 		:done, 08-03, 5d
+	Challange				:done, 08-06, 9d
+	sync (unit)				:done, 08-14, 4d 
 	
 	section DevOps
-	docker-compose deploy passive :done, 08-06, 2d
-	docker-compose pipeline with gitlab :done, 08-08, 1d
-	docker-compose automation ci/cd :done, 08-09,3d
+	compose deploy passive :done, 08-06, 2d
+	compose pipeline 	   :done, 08-08, 1d
+	compose automation     :done, 08-09, 3d
 	
 
-
 	section 문서 정리 및 마무리
-    QA 및 버그 찾기               :done, 08-16, 3d
-    
-    section 기타
-    UCC제작 :done, 08-18 2d
-    발표준비 :done, 08-18, 2d
+    QA 및 버그 찾기			:done, 08-16, 4d
+    UCC제작 				  :done, 08-18, 2d
+    발표준비				 :done, 08-18, 2d
 ```

@@ -1,5 +1,6 @@
 package com.project.orange.entity.report;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
 import javax.persistence.*;
@@ -19,6 +20,7 @@ public class ReportCategories {
     @Column(name = "report_category_name")
     private String reportCategoryName;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "reportId", fetch = FetchType.LAZY) //하나의 reportCategory는 여러 개의 report를 가진다.
     List<Reports> reportsList = new ArrayList<>();
 }

@@ -9,8 +9,10 @@ import androidx.core.view.doOnNextLayout
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.keelim.orange.R
 import com.keelim.orange.common.toast
 import com.keelim.orange.data.model.Badge
+import com.keelim.orange.data.model.Badge2
 import com.keelim.orange.databinding.FragmentAllBadgeBinding
 import com.keelim.orange.utils.SpringAddItemAnimator
 import dagger.hilt.android.AndroidEntryPoint
@@ -21,7 +23,6 @@ class AllBadgeFragment:Fragment() {
     private val binding get() = _binding!!
     private val viewModel: AllBadgeViewModel by viewModels()
     private val badgeAdapter = BadgeAdapter {
-        requireActivity().toast("뱃지 입니다")
     }
 
     private val userId by lazy {
@@ -56,6 +57,7 @@ class AllBadgeFragment:Fragment() {
             is BadgeState.Loading -> handleLoading()
             is BadgeState.Success -> handleSuccess(
                 it.data,
+                it.data2
             )
             is BadgeState.Error -> handleError()
         }
@@ -66,12 +68,50 @@ class AllBadgeFragment:Fragment() {
     }
 
     private fun handleLoading() {
-        requireActivity().toast("데이터 초기화 중입니다.")
+//        requireActivity().toast("데이터 초기화 중입니다.")
     }
+    val dark = arrayOf(
+        R.drawable.badge1_none,
+        R.drawable.badge2_none,
+        R.drawable.badge3_none,
+        R.drawable.badge4_none,
+        R.drawable.badge5_none,
+        R.drawable.badge6_none,
+        R.drawable.badge7_none,
+        R.drawable.badge8_none,
+        R.drawable.badge9_none,
+        R.drawable.badge10_none,
+        R.drawable.badge11_none,
+    )
 
-    private fun handleSuccess(data1: List<Badge>) {
-        requireContext().toast(data1.toString())
-        badgeAdapter.submitList(data1)
+    val light = arrayOf(
+        R.drawable.badge1,
+        R.drawable.badge2,
+        R.drawable.badge3,
+        R.drawable.badge4,
+        R.drawable.badge5,
+        R.drawable.badge6,
+        R.drawable.badge7,
+        R.drawable.badge8,
+        R.drawable.badge9,
+        R.drawable.badge10,
+        R.drawable.badge11,
+    )
+    private fun handleSuccess(data1: List<Badge>, data2: List<Badge2>) {
+        val arrayList = arrayListOf<Badge>()
+        data1.forEachIndexed { index, badge ->
+            arrayList.add(
+                Badge(
+                    badge.title,
+                    badge.description,
+                    dark[index].toString()
+                )
+            )
+        }
+        data2.forEach {
+            arrayList[it.index-1].image_path = light[it.index-1].toString()
+        }
+        badgeAdapter.submitList(arrayList.toList())
     }
 
     private fun handleError() {

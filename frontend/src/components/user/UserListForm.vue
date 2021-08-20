@@ -14,7 +14,7 @@ export default {
   name: 'UserListForm',
   data() {
     return {
-      username: 'username',
+      username: '',
     }
   }
 }

@@ -1,164 +1,68 @@
 <template>
-  <v-container class="fill-height">
-    <v-row class="justify-content-center my-5">
-      <v-col cols="auto">
-        <v-card
-          width="460"
-        >
-          <v-card-text class="text-center px-12 py-16">
-            <validation-observer
-              ref="observer"
-              v-slot="{ invalid }"
-            >
-              <v-form
-                ref="form"
-                @submit.prevent="checkForm"
-              >
-                <div class="text-h4 font-weight-black mb-10">
-                  회원가입
-                </div>
-                <validation-provider
-                  v-slot="{ errors }"
-                  name="이메일"
-                  :rules="{
-                    required: true,
-                    email: true,
-                  }"
-                >
-                  <v-text-field
-                    v-model="email"
-                    label="이메일"
-                    clearable
-                    prepend-icon="mdi-email"
-                    :error-messages="errors"
-                  />
-                </validation-provider>
-
-                <validation-provider
-                  v-slot="{ errors }"
-                  name="이름"
-                  :rules="{
-                    required: true,
-                    kor: true,
-                  }"
-                >
-                  <v-text-field
-                    v-model="username"
-                    label="이름"
-                    clearable
-                    prepend-icon="mdi-account"
-                    :error-messages="errors"
-                  />
-                </validation-provider>
-
-                <validation-provider
-                  v-slot="{ errors }"
-                  name="닉네임"
-                  :rules="{
-                    required: true,
-                    korAlphaNum: true,
-                  }"
-                >
-                  <v-text-field
-                    v-model="nickname"
-                    label="닉네임"
-                    clearable
-                    prepend-icon="mdi-alphabetical"
-                    :error-messages="errors"
-                  />
-                </validation-provider>
-
-                <validation-provider
-                  v-slot="{ errors }"
-                  name="비밀번호"
-                  :rules="{
-                    required: true,
-                    min: 8,
-                  }"
-                >
-                  <v-text-field
-                    v-model="password"
-                    type="password"
-                    label="비밀번호"
-                    clearable
-                    prepend-icon="mdi-lock-outline"
-                    :error-messages="errors"
-                  />
-                </validation-provider>
-                <validation-provider
-                  v-slot="{ errors }"
-                  name="비밀번호 확인"
-                  :rules="{
-                    confirmed: '비밀번호',
-                    required: true,
-                    min: 8,
-                  }"
-                >
-                  <v-text-field
-                    v-model="passwordConfirm"
-                    label="비밀번호 확인"
-                    type="password"
-                    clearable
-                    prepend-icon="mdi-lock-outline"
-                    :error-messages="errors"
-                  />
-                </validation-provider>
-                <v-btn
-                  class="mt-6"
-                  type="submit"
-                  block
-                  x-large
-                  rounded
-                  color="primary"
-                  :disabled="invalid"
-                  @click="signUp"
-                >
-                  가입하기
-                </v-btn>
-                <!-- <p>{{ logMessage }}</p> -->
-                <div class="mt-5">
-                  <router-link
-                    class="text-decoration-none"
-                    to="/"
-                  >
-                    홈
-                  </router-link> |
-                  <router-link
-                    class="text-decoration-none"
-                    to="/authentication/login"
-                  >
-                    로그인
-                  </router-link>
-                </div>
-              </v-form>
-            </validation-observer>
-          </v-card-text>
-        </v-card>
-      </v-col>
-    </v-row>
-  </v-container>
+  <v-app>
+    <v-main>
+      <v-container class="fill-height" fluid>
+        <v-row align="center" justify="center" dense>
+          <v-col cols="12" sm="8" md="4" lg="4">
+            <v-card elevation="0">
+              <v-img src="@/assets/images/projectOrange.png" alt="Project Orange Log" contain height="200"></v-img>
+              <v-card-text>
+                <validation-observer ref="observer" v-slot="{ invalid }">
+                  <v-form ref="form" @submit.prevent="checkForm">
+                    <validation-provider v-slot="{ errors }" name="이메일" :rules="{ required: true, email: true }">
+                      <v-text-field label="Enter your email" v-model="email" name="email" prepend-inner-icon="mdi-email" type="email" class="rounded-0" :error-messages="errors" clearable outlined></v-text-field>
+                    </validation-provider>
+                    <validation-provider v-slot="{ errors }" name="이름" :rules="{ required: true, kor: true }">
+                      <v-text-field label="Enter your username" v-model="username" name="username" prepend-inner-icon="mdi-account" class="rounded-0" :error-messages="errors" clearable outlined></v-text-field>
+                    </validation-provider>
+                    <validation-provider v-slot="{ errors }" name="닉네임" :rules="{ required: true, korAlphaNum: true }">
+                      <v-text-field label="Enter your nickname" v-model="nickname" name="nickname" prepend-inner-icon="mdi-alphabetical" class="rounded-0" :error-messages="errors" clearable outlined></v-text-field>
+                    </validation-provider>
+                    <validation-provider v-slot="{ errors }" name="비밀번호" :rules="{ required: true, min: 8 }">
+                      <v-text-field label="Enter your password" v-model="password" name="password" prepend-inner-icon="mdi-lock" type="password" class="rounded-0" :error-messages="errors" clearable outlined></v-text-field>
+                    </validation-provider>
+                    <validation-provider v-slot="{ errors }" name="비밀번호 확인" :rules="{ confirmed: '비밀번호', required: true, min: 8 }">
+                      <v-text-field label="Enter your password confirm" v-model="passwordConfirm" name="passwordConfirm" prepend-inner-icon="mdi-lock" type="password" class="rounded-0" :error-messages="errors" clearable outlined></v-text-field>
+                    </validation-provider>
+                    <v-btn class="rounded-0" type="submit" block x-large color="orange" :disabled="invalid" @click="signUp">
+                      Signup
+                    </v-btn>
+                    <v-card-actions class="text--secondary">
+                      <v-spacer></v-spacer>
+                      <!-- <router-link :to="{ name: 'SignUp' }">Sign Up</router-link> -->
+                      account? <router-link to="/authentication/login" class="pl-2 text-decoration-none" style="color: #000000">Login</router-link>
+                    </v-card-actions>
+                  </v-form>
+                </validation-observer>
+              </v-card-text>
+              <v-card-actions class="ml-6 mr-6 text-center">
+                <p>Project Orange는 다같이 건강 챌린지를 진행하는<router-link to="/" class="pl-2" style="color: #000000">공간</router-link>입니다. Project Orange로 건강한 하루를 시작하세요.</p>
+              </v-card-actions>
+            </v-card>
+          </v-col>
+        </v-row>
+      </v-container>
+    </v-main>
+  </v-app>
 </template>
 
 <script>
-import { registerUser } from '@/api/index'
+import { registerUser } from '@/api/auth'
 
 export default {
   name: 'SignupForm',
-  data: () => ({
-    email: "",
-    username: "",
-    nickname: "",
-    password: "",
-    passwordConfirm: "",
-    // log
-    // logMessage: "",
-  }),
+  data() {
+    return {
+      email: "",
+      username: "",
+      nickname: "",
+      password: "",
+      passwordConfirm: "",
+    }
+  },
   methods: {
     async checkForm () {
-      const result = await this.$refs.observer.validate()
-      // if (result) {
-      //   alert('가입 완료')
-      // }
+      await this.$refs.observer.validate()
     },
     async signUp() {
       try {
@@ -170,12 +74,15 @@ export default {
           passwordConfirm: this.passwordConfirm,
         }
         const { data } = await registerUser(userData)
-        // console.log(data.username)
-        console.log(data)
-        alert("회원 가입에 성공하였습니다.")
-        // this.logMessage = `${data.username} 님이 가입되었습니다.`
+        // console.log(data)
+        if (data.response == 'success') {
+          alert(data.message)
+          this.$router.push('/authentication/login')
+        } else {
+          alert(data.message)
+        }
       } catch (error) {
-        console.log(error)
+        console.error(error)
         alert("회원 가입에 실패하였습니다.")
       } finally {
         this.initForm();

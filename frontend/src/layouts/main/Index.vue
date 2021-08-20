@@ -5,6 +5,7 @@
     <Navbar />
 
     <MainView />
+    
   </v-app>
 </template>
 

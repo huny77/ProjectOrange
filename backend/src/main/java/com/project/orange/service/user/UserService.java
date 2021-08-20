@@ -10,5 +10,7 @@ public interface UserService {
     public Users selectAllByUserId(Long userId);
     public void updateById(Long userId, Users user);
     public void deleteById(Long userId);
+    public boolean checkNicknameDuplicate(String nickname);
+    public boolean checkEmailDuplicate(String email);
 
 }

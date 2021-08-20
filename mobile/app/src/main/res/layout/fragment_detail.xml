@@ -5,15 +5,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+
     <ImageView
-        android:id="@+id/orange_btn"
+        android:id="@+id/btn_heart"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
-        android:src="@drawable/project_orange"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_margin="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@android:color/transparent"
+        android:src="@drawable/ic_heart"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="310dp" />
+
 
     <TextView
         android:id="@+id/title"
@@ -21,34 +24,25 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
-        android:text=""
+        android:text="Preview"
         android:textColor="@android:color/black"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/orange_btn"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="챌린지 제목" />
-
-    <com.google.android.material.chip.Chip
-        android:id="@+id/btn_join"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp"
-        android:text="JOIN ->"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
+    <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/main_img"
         android:layout_width="0dp"
         android:layout_height="300dp"
         android:layout_margin="15dp"
+        android:background="@drawable/round_corner"
+        app:layout_constraintTop_toBottomOf="@id/title"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btn_join"
+        app:strokeColor="@color/white"
+        app:strokeWidth="3dp"
+        tools:layout_editor_absoluteY="51dp"
         tools:src="@tools:sample/avatars" />
 
     <TextView

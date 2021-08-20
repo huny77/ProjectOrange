@@ -53,20 +53,4 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         web.ignoring().antMatchers("/v2/api-docs", "/swagger-resources/**",
                 "/swagger-ui.html", "/webjars/**", "/swagger/**");
     }
-
-
-//    @Override
-//    protected void configure(HttpSecurity http) throws Exception {
-//
-//        http.formLogin()
-//                .usernameParameter("email")
-//                .passwordParameter("password")
-//    }
-
-//    @Bean
-//    @Override
-//    public AuthenticationManager authenticationManagerBean() throws Exception {
-//        return super.authenticationManagerBean();
-//    }
-
 }

@@ -30,6 +30,17 @@ public class ArticlesController {
         }
     }
 
+    @GetMapping("/list/{userId}")
+    public ResponseEntity<List<Articles>> selectAllByUserId(@PathVariable Long userId){
+        List<Articles> list = articlesService.selectAllByUserId(userId);
+        if(list != null && !list.isEmpty()) {
+            return new ResponseEntity<List<Articles>>(list, HttpStatus.OK);
+        }
+        else {
+            return new ResponseEntity(HttpStatus.NO_CONTENT);
+        }
+    }
+
     @GetMapping("/{articleId}")
     public ResponseEntity<String> articleDetail(@PathVariable Long articleId){
         Optional<Articles> article = articlesService.selectOne(articleId);

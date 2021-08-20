@@ -34,6 +34,22 @@ object SquareUp {
     const val retrofit_gson = "com.squareup.retrofit2:converter-gson:$rversion"
 }
 
+object Compose {
+    const val version = "1.0.1"
+
+    const val runtime = "androidx.compose.runtime:runtime:$version"
+    const val ui = "androidx.compose.ui:ui:${version}"
+    const val material = "androidx.compose.material:material:${version}"
+    const val materialAdapter = "com.google.android.material:compose-theme-adapter:${version}"
+    const val tooling = "androidx.compose.ui:ui-tooling:${version}"
+    const val livedata = "androidx.compose.runtime:runtime-livedata:$version"
+    const val animation = "androidx.compose.animation:animation:$version"
+
+//    const val activity = "androidx.activity:activity-compose:${AndroidX.activity.activityVersion}"
+    const val constraintLayout = "androidx.constraintlayout:constraintlayout-compose:1.0.0-beta02"
+    const val viewModel = "androidx.lifecycle:lifecycle-viewmodel-compose:1.0.0-alpha07"
+}
+
 object Room {
     private const val roomVersion = "2.4.0-alpha04"
     const val runtime = "androidx.room:room-runtime:$roomVersion"
@@ -59,13 +75,6 @@ object Hilt {
 
     const val testing = "com.google.dagger:hilt-android-testing:${version}"
     const val android_hilt_compiler = "androidx.hilt:hilt-compiler:${version}"
-}
-
-object Compose {
-    private const val compose_version = "1.0.0-rc01"
-    const val compose_ui = "androidx.compose.ui:ui:$compose_version"
-    const val compose_material = "androidx.compose.material:material:$compose_version"
-    const val compose_ui_tooling = "androidx.compose.ui:ui-tooling:$compose_version"
 }
 
 object Kotlin {

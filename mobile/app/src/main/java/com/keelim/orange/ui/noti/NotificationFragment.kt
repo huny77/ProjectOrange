@@ -21,7 +21,7 @@ class NotificationFragment : Fragment() {
 
   private val userId by lazy {
     val pref = requireActivity().getSharedPreferences("userId", AppCompatActivity.MODE_PRIVATE)
-    return@lazy pref.getInt("userId", 20)
+    return@lazy pref.getInt("userId", -1)
   }
 
   private val notificationAdapter by lazy {
@@ -68,11 +68,11 @@ class NotificationFragment : Fragment() {
   }
 
   private fun handleUnInitialized() {
-    requireActivity().toast("데이터 초기화 중입니다.")
+    //requireActivity().toast("데이터 초기화 중입니다.")
   }
 
   private fun handleLoading() {
-    requireActivity().toast("데이터 초기화 중입니다.")
+    //requireActivity().toast("데이터 초기화 중입니다.")
   }
   private fun handleSuccess(data: List<Notification>) {
     if(data.isEmpty()){
@@ -84,6 +84,6 @@ class NotificationFragment : Fragment() {
   }
 
   private fun handleError() {
-    requireActivity().toast("에러가 발생했습니다. 다시 한번 로드해주세요")
+//    requireActivity().toast("에러가 발생했습니다. 다시 한번 로드해주세요")
   }
 }

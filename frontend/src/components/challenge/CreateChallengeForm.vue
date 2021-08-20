@@ -1,154 +1,135 @@
 <template>
-  <v-container class="fill-height">
-    <v-row class="justify-content-center my-5">
-      <v-col cols="auto">
-        <v-card
-          width="720"
-        >
-          <v-card-text class="text-center px-12 py-16">
-            <validation-observer
-              ref="observer"
-              v-slot="{ invalid }"
-            >
-              <v-form
-                ref="form"
-                @submit.prevent="createPost"
-              >
-                <div class="text-h4 font-weight-black mb-10">
-                  챌린지 생성
-                </div>
-                <span>챌린지는 여러분들이 만들어 나가는 것입니다.</span><br>
-                <span class="mb-10">성의있는 제목, 내용을 작성해주세요.</span>
-                <validation-provider
-                  v-slot="{ errors }"
-                  name="챌린지 제목"
-                  :rules="{
-                    required: true,
-                    ChallengeTitle: true,
-                  }"
-                >
-                  <v-text-field
-                    v-model="challengename"
-                    label="챌린지 제목"
-                    clearable
-                    prepend-icon="mdi-email"
-                    :error-messages="errors"
-                  />
-                </validation-provider>
-
-                <validation-provider
-                  v-slot="{ errors }"
-                  name="카테고리"
-                  :rules="{
-                    required: true,
-                  }"
-                >
-                  <v-select
-                    v-model="select"
-                    :items="items"
-                    label="카테고리"
-                    data-vv-name="select"
-                    prepend-icon="mdi-account"
-                    :error-messages="errors"
-                  />
-                </validation-provider>
-
-                <v-slider
-                  v-model="slider"
-                  class="align-center"
-                  :max="50"
-                  :min="2"
-                  :rules="rules"
-                  prepend-icon="mdi-account"
-                  label="인원"
-                  hide-details
-                >
-                  <template v-slot:append>
-                    <v-text-field
-                      v-model="slider"
-                      class="mt-0 pt-0"
-                      hide-details
-                      single-line
-                      :rules="rules"
-                      type="number"
-                      style="width: 60px"
-                    ></v-text-field>
-                  </template>
-                </v-slider>
-                <DateForm />
-                <validation-provider
-                  v-slot="{ errors }"
-                  name="챌린지 내용"
-                  :rules="{
-                  }"
-                >
-                  <v-textarea
-                    v-model="challengetext"
-                    label="챌린지 내용"
-                    clearable
-                    hint="챌린지 내용을 성의있게 입력해주세요."
-                    prepend-icon="mdi-lock-outline"
-                    :error-messages="errors"
-                  />
-                </validation-provider>
-
-                <v-file-input
-                  label="대표 사진"
-                  hint="챌린지 배경사진을 넣어주세요."
-                  prepend-icon="mdi-camera"
-                ></v-file-input>
-
-                <v-btn
-                  class="mt-6"
-                  type="submit"
-                  block
-                  x-large
-                  rounded
-                  color="primary"
-                  :disabled="invalid"
-                >
-                  챌린지 생성
-                </v-btn>
-              </v-form>
-            </validation-observer>
-          </v-card-text>
-        </v-card>
-      </v-col>
-    </v-row>
-  </v-container>
+  <v-app>
+    <v-main>
+      <v-container class="fill-height" fluid>
+        <v-row align="center" justify="center" dense>
+          <v-col cols="6">
+            <v-img src="@/assets/images/challengeImg.jpg" alt="Project Orange Log" contain height="800"></v-img>
+          </v-col>
+          <v-col cols="6">
+            <v-card elevation="0">
+              <v-card-subtitle class="text-center">챌린지는 여러분들이 만들어나가는 겁니다.
+              <br>성의있는 제목과 내용을 작성해주세요.</v-card-subtitle>
+              <v-card-text>
+                <validation-observer ref="observer" v-slot="{ invalid }">
+                  <v-form ref="form" @submit.prevent="submitForm">
+                    <validation-provider v-slot="{ errors }" name="챌린지 제목" :rules="{ required: true, ChallengeTitle: true }">
+                      <v-text-field label="챌린지 제목" v-model="challengeTitle" prepend-inner-icon="mdi-walk" class="rounded-0" :error-messages="errors" clearable outlined></v-text-field>
+                    </validation-provider>
+                    <validation-provider v-slot="{ errors }" name="카테고리" :rules="{ required: true }">
+                      <v-select label="챌린지 카테고리" v-model="selectCategory" :items="selectCategoryItem" prepend-inner-icon="mdi-numeric-3-box-outline" class="rounded-0" :error-messages="errors" outlined></v-select>
+                    </validation-provider>
+                    <validation-provider v-slot="{ errors }" name="기간" :rules="{ required: true }">
+                      <v-select label="기간" v-model="selectPeriod" :items="selectPeriodItem" prepend-inner-icon="mdi-numeric-6-box-outline" class="rounded-0" :error-messages="errors" outlined></v-select>
+                    </validation-provider>
+                    <validation-provider v-slot="{ errors }" name="인원" :rules="{ required: true }">
+                      <v-text-field label="2명 이상의 최대 인원" v-model="maxMembers" prepend-inner-icon="mdi-human-handsup" class="rounded-0" :error-messages="errors" clearable outlined></v-text-field>
+                    </validation-provider>
+                    <validation-provider v-slot="{ errors }" name="챌린지 내용" :rules="{ required: true}">
+                      <v-textarea label="챌린지 내용" v-model="challengeDescribe" prepend-inner-icon="mdi-comment-text-outline" class="rounded-0" :error-messages="errors" clearable outlined></v-textarea>
+                    </validation-provider>
+                    <v-btn class="rounded-0" type="submit" block x-large color="orange" :disabled="invalid" @click="createForm">
+                      챌린지 생성
+                    </v-btn>
+                    <v-card-actions class="text--secondary">
+                      <v-spacer></v-spacer>
+                    <a href="javascript:history.back()" class="pl-2 text-decoration-none" style="color: #000000">뒤로 가기</a>
+                    </v-card-actions>
+                  </v-form>
+                </validation-observer>
+              </v-card-text>
+            </v-card>
+          </v-col>
+        </v-row>
+      </v-container>
+    </v-main>
+  </v-app>
 </template>
 
 <script>
-import DateForm from '@/components/challenge/DateForm.vue'
+import { createChallenge } from '@/api/challenge'
 
 export default {
   name: 'CreateChallengeForm',
-  components: {
-    DateForm,
-  },
-  data: () => ({
-    challengename: null,
-    challengetext: null,
-    slider: null,
-    select: null,
-    items: [
-      '운동',
-      '음식',
-      '영양제',
-    ],
-    rules: [
-      v => v <= 50 || '50명 제한',
-    ],
-  }),
-  methods: {
-    async createPost () {
-      const result = await this.$refs.observer.validate()
-      if (result) {
-        alert('챌린지 생성 완료')
-      }
+  data() {
+    return {
+      challengeTitle: '',
+      challengeDescribe: '',
+      slider: null,
+      selectCategory: null,
+      selectPeriod: null,
+      maxMembers: '',
+      minMembers: 1,
+      periodId: '',
+      startDate: '',
+      managerId: '',
+      categoryId: '',
+      periodDataItem: [],
+      categoryDataItem: [],
+
+      selectCategoryItem: [
+        "운동", "음식", "영양제",
+      ],
+      selectPeriodItem: [
+        "15일", "30일", "60일", "100일", "180일", "1년",
+      ],
     }
+  },
+  methods: {
+    async submitForm () {
+      await this.$refs.observer.validate()
+    },
+    async createForm () {
+      try {
+        let date = new Date()
+        if (this.selectCategory == '운동') {
+          this.categoryId = 1
+        } else if (this.selectCategory == '음식') {
+          this.categoryId = 2
+        } else if (this.selectCategory == '영양제') {
+          this.categoryId = 3
+        }
+        
+        if (this.selectPeriod == '15일') {
+          this.periodId = 1
+        } else if (this.selectPeriod == '30일') {
+          this.periodId = 2
+        } else if (this.selectPeriod == '60일') {
+          this.periodId = 3
+        } else if (this.selectPeriod == '100일') {
+          this.periodId = 4
+        } else if (this.selectPeriod == '180일') {
+          this.periodId = 5
+        } else if (this.selectPeriod == '1년') {
+          this.periodId = 6
+        }
+
+        const challengeData = {
+          challengeTitle: this.challengeTitle,
+          challengeDescribe: this.challengeDescribe,
+          maxMembers: this.maxMembers,
+          minMembers: this.minMembers,
+          periodId: this.periodId,
+          startDate: date.toISOString(),
+          managerId: this.$store.state.data2,
+          categoryId: this.categoryId,
+          // totalPoint: 100,
+        }
+        const { data } = await createChallenge(challengeData)
+        // console.log(data)
+        if (data.result == 'matched' || data.result == 'unmatched') {
+          alert('챌린지가 정상적으로 생성되었습니다.')
+          this.$router.push('/')
+        } else {
+          alert('챌린지가 생성되지 않았습니다.')
+        }
+      } catch(error) {
+        console.error(error)
+      }
+    },
   }
 }
+
 </script>
 
 <style>

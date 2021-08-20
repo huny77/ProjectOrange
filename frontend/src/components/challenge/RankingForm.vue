@@ -1,57 +1,61 @@
 <template>
   <v-container>
-    <div class="text-h3 text-center mb-10">랭킹</div>
-    <v-data-table
-      :headers="headers"
-      :items="teams"
-      :items-per-page="5"
-      class="elevation-1"
-    ></v-data-table>
+    <v-card flat>
+      <div class="text-h3 text-center mb-10">랭킹</div>
+      <v-card-title>
+        <v-text-field
+          v-model="search"
+          append-icon="mdi-magnify"
+          label="챌린지 제목을 입력해주세요"
+          single-line
+          hide-details
+        ></v-text-field>
+      </v-card-title>
+      <v-data-table
+        :headers="headers"
+        :items="teams"
+        :items-per-page="10"
+        :search="search"
+        class="elevation-1"
+      ></v-data-table>
+    </v-card>
   </v-container>
 </template>
 
 <script>
+import { popularMain } from '@/api/main'
+
 export default {
   name: 'RankingForm.vue',
   data() {
     return {
+      search: '',
       headers: [
         {
-          text: '챌린지 랭킹',
+          text: '챌린지 제목',
           align: 'start',
           sortable: true,
-          value: 'team',
+          value: 'challengeTitle',
         },
-        { text: '점수', value: 'score' }
+        { text: '점수', value: 'totalPoint' }
       ],
-      teams: [
-        {
-          team: '챌린지 1',
-          score: 1234
-        },
-        {
-          team: '챌린지 2',
-          score: 12345
-        },
-        {
-          team: '챌린지 3',
-          score: 123456
-        },
-        {
-          team: '챌린지 4',
-          score: 124
-        },
-        {
-          team: '챌린지 5',
-          score: 135
-        },
-        {
-          team: '챌린지 6',
-          score: 2345
-        },
-      ]
+      teams: [],
     }
-  }
+  },
+  methods: {
+    async ranking() {
+      try {
+        const { data } = await popularMain()
+        this.teams = data
+        // console.log(data)
+      } catch(err) {
+        console.log(err)
+      }
+    }
+  },
+  created() {
+    this.ranking()
+  },
 }
 </script>
 

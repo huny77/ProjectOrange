@@ -21,7 +21,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.keelim.orange.data.model.History
+import com.keelim.orange.data.model.entity.History
 import com.keelim.orange.databinding.ItemSearchDetailBinding
 import timber.log.Timber
 

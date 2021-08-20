@@ -8,6 +8,6 @@ import java.util.Optional;
 
 @Repository
 public interface BattleMatchingRepository extends JpaRepository<BattleMatching, Long> {
-    public Optional<Long> findByBlueTeamChallengeId(Long blueTeamId);
-    public Optional<Long> findByRedTeamChallengeId(Long RedTeamId);
+    public Optional<BattleMatching> findByBlueTeamChallengeId(Long blueTeamId);
+    public Optional<BattleMatching> findByRedTeamChallengeId(Long RedTeamId);
 }

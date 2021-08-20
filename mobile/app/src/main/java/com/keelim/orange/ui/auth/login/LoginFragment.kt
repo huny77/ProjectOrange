@@ -111,6 +111,15 @@ class LoginFragment : Fragment() {
             apply()
           }
         }
+
+        val pref2 = requireActivity().getSharedPreferences("userId", AppCompatActivity.MODE_PRIVATE)
+        val userId = pref.getInt("userId", 19)
+        if (userId == 19) {
+          val editor = pref2.edit().apply {
+            putInt("userId", loginResult.uid!!)
+            apply()
+          }
+        }
         updateUiWithUser(it)
       }
     }

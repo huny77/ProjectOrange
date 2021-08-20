@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -22,6 +23,17 @@ public class ArticleImagesController {
     @GetMapping("/list")
     public ResponseEntity<List<ArticleImages>> selectAll(){
         List<ArticleImages> list = articleImagesService.selectAll();
+        if(list != null && !list.isEmpty()) {
+            return new ResponseEntity<List<ArticleImages>>(list, HttpStatus.OK);
+        }
+        else {
+            return new ResponseEntity(HttpStatus.NO_CONTENT);
+        }
+    }
+
+    @GetMapping("/search/{articleId}")
+    public ResponseEntity<List<ArticleImages>> selectAllByArticleId(@PathVariable Long articleId){
+        List<ArticleImages> list = articleImagesService.selectAllByArticleId(articleId);
         if(list != null && !list.isEmpty()) {
             return new ResponseEntity<List<ArticleImages>>(list, HttpStatus.OK);
         }

@@ -6,5 +6,5 @@ package com.keelim.orange.data.model
 data class LoggedInUser(
   val userId: String,
   val displayName: String,
-  val token:String?,
+  val token: String?,
 )

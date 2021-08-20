@@ -9,14 +9,14 @@
 
 <script>
 export default {
-    name: "LoginKakao",
-    methods: {
-        loginWithKakao() {
-            const params = {
-                redirectUri: "http://localhost:8080/auth/kakao/callback",
-            };
-            window.Kakao.Auth.authorize(params);
-        },
+  name: "LoginKakao",
+  methods: {
+    loginWithKakao() {
+      const params = {
+        redirectUri: "http://localhost:8080/auth/kakao/callback",
+      };
+    window.Kakao.Auth.authorize(params);
     },
+  },
 };
 </script>

@@ -9,5 +9,5 @@ import java.util.List;
 @Repository
 public interface ArticlesRepository extends JpaRepository<Articles, Long> {
     public List<Articles> findAllByChallenge(Long challenge);
-//    public List<Articles> findAllByUser(Long user);
+    public List<Articles> findAllByUser(Long user);
 }

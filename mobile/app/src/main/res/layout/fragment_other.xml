@@ -59,7 +59,7 @@
         android:layout_marginHorizontal="10dp"
         android:layout_marginTop="20dp"
         android:gravity="left|center_vertical"
-        android:text="공유하기"
+        android:text="웹 버전 이동하기"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

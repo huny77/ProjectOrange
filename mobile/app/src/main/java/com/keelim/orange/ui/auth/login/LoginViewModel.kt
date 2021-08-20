@@ -31,7 +31,8 @@ class LoginViewModel @Inject constructor(
         setLoginResult(
           LoginResult(
             success = LoggedInUserView(displayName = result.data.displayName),
-            token = result.data.token
+            token = result.data.token,
+            uid = result.data.userId.toInt()
           )
         )
       }

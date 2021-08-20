@@ -19,7 +19,7 @@
         </v-card-text><hr>
 
         <v-card-text>
-         <UserListForm />
+          
         </v-card-text>
 
         <v-card-actions>
@@ -39,15 +39,11 @@
 </template>
 
 <script>
-import UserListForm from '@/components/user/UserListForm.vue'
 export default {
   name: 'FollowerDialog',
-  components: {
-    UserListForm,
-  },
   data() {
     return {
-      followers: '784',
+      followers: '0',
       dialog: false,
     }
   }

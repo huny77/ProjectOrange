@@ -16,11 +16,11 @@ public class FollowerFollowing {
     private Long followId;
 
     @ManyToOne
-    @JoinColumn(name = "from")
+    @JoinColumn(name = "\"from\"")
     private Users from;
 
     @ManyToOne
-    @JoinColumn(name = "to")
+    @JoinColumn(name = "\"to\"")
     private Users to;
 
 }

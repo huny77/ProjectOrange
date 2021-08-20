@@ -31,7 +31,6 @@ class NotificationViewModel @Inject constructor(
           )
       )
     } catch (e: Exception) {
-        Timber.e(e)
         setState(
             NotificationState.Error
         )

@@ -30,11 +30,11 @@ public class ArticleTest {
 
     @Test
     void createNewArticleTest(){
-        Long challengeId = 1L;
+        Long challengeId = 7L;
 //        Optional<Challenges> challenge = ChallengeService.selectByChallengeId(challengeId);
         Long userId = 18L;
-        String title = "제목";
-        String articleContent = "내용";
+        String title = "15점짜리 게시글";
+        String articleContent = "이미지 저장 api는 별도로 호출해야 합니다";
         LocalDateTime now = LocalDateTime.now();
         Boolean verified = Boolean.TRUE;
 

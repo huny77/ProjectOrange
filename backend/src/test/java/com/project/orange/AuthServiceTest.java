@@ -43,14 +43,6 @@ public class AuthServiceTest {
         authService.signUpUser(user);
     }
 
-//    @Test
-//    public void read(){
-//        Optional<Users> user = userRepository.findByEmail("test1");
-//
-//        user.ifPresent(selectUser ->{
-//            System.out.println("user: "+selectUser);
-//        });
-//    }
 
     @Test
     public void delete(){
@@ -59,7 +51,6 @@ public class AuthServiceTest {
             userRepository.delete(selectUser);
         });
     }
-
 
 
     @Test
@@ -72,7 +63,7 @@ public class AuthServiceTest {
             e.printStackTrace();
         }
     }
-    //요것도 성공 redis.cli에 값 매우 잘 들어감
+
     @Test
     void setData(){
         redisUtil.setDataExpire("11","11",20);

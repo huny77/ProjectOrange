@@ -18,7 +18,7 @@ class BadgeAdapter(
     fun bind(item: Badge) = with(binding) {
       badgeTitle.text = item.title
       badgeDescription.text = item.description
-      badgeImg.load("https://images.unsplash.com/photo-1613826488066-5a115a53a1fc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1336&q=80")
+      badgeImg.load(item.image_path.toInt())
 
       root.setOnClickListener {
         clickListener.invoke()

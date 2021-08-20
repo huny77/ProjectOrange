@@ -8,6 +8,7 @@ import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.google.android.material.tabs.TabLayoutMediator
 import com.keelim.orange.R
 import com.keelim.orange.databinding.ActivityTutorialBinding
+import com.keelim.orange.ui.auth.AuthActivity
 import com.keelim.orange.ui.main.MainActivity
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -39,7 +40,7 @@ class TutorialActivity : AppCompatActivity() {
     }
 
     private fun goNext() {
-        startActivity(Intent(this, MainActivity::class.java))
+        startActivity(Intent(this, AuthActivity::class.java))
         finish()
     }
 

@@ -1,7 +1,7 @@
 package com.keelim.orange.data.model
 
 data class Search(
-  val uid: Int,
+  val challengeId: Int,
   val title: String,
-  val number: String,
+  val description: String,
 )

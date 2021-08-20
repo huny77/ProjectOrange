@@ -14,4 +14,5 @@ public interface ArticlesService {
     public void deleteByArticleId(Long articleId);
     public Optional<Articles> updateArticle(Articles article);
 //    public List<Articles> selectByChallenge(Articles challenge);
+    public List<Articles> selectAllByUserId(Long userId);
 }

@@ -1,5 +1,6 @@
 package com.project.orange.entity.article;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
 import javax.persistence.*;
@@ -21,9 +22,11 @@ public class Articles{
     private Long articleId;
 
 //    피드에서 이미지와 댓글에 접근
+    @JsonIgnore
     @OneToMany(mappedBy = "article")
     private List<ArticleImages> imagesList = new ArrayList<>();
 
+    @JsonIgnore
     @OneToMany(mappedBy = "article")
     private List<Comments> commentsList = new ArrayList<>();
 

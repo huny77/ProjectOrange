@@ -4,18 +4,21 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.keelim.orange.data.model.entity.Favorite
+import com.keelim.orange.data.model.ranking.Ranking
+import com.keelim.orange.domain.auth.FavoriteUseCase
 import com.keelim.orange.domain.season.RankingUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 import kotlinx.coroutines.launch
-import timber.log.Timber
 
 @HiltViewModel
 class RankingViewModel @Inject constructor(
   private val rankingUseCase: RankingUseCase,
+  private val favoriteUseCase: FavoriteUseCase,
 ) : ViewModel() {
-  private var _state = MutableLiveData<RankingState>(RankingState.UnInitialized)
-  val state: LiveData<RankingState> = _state
+  private val _state = MutableLiveData<RankingState>(RankingState.UnInitialized)
+  val state: LiveData<RankingState> get() = _state
 
   fun fetchData() = viewModelScope.launch {
     setState(
@@ -24,19 +27,35 @@ class RankingViewModel @Inject constructor(
 
     try {
       setState(
-        RankingState.Success(
-          rankingUseCase.ranking(),
+        RankingState.Success1(
+          rankingUseCase.start()
+        )
+      )
+
+      setState(
+        RankingState.Success2(
+          rankingUseCase.point()
         )
       )
     } catch (e: Exception) {
-      Timber.d(e)
       setState(
         RankingState.Error
       )
     }
   }
 
-  private fun setState(state: RankingState) {
-    _state.value = state
+  fun favoriteAdd(ranking: Ranking) = viewModelScope.launch {
+    favoriteUseCase.insert(
+      Favorite(
+        ranking.ranking_title,
+        ranking.ranking_description,
+        ranking.image_address,
+        ranking.rank,
+      )
+    )
+  }
+
+  private fun setState(value: RankingState) {
+    _state.value = value
   }
 }

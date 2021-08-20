@@ -18,7 +18,6 @@ class AuthActivity : AppCompatActivity() {
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
     setContentView(binding.root)
-    tokenCheck()
   }
 
   private fun navController() = findNavController(R.id.nav_host_fragment_activity_auth)

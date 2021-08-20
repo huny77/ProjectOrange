@@ -7,16 +7,16 @@ import './plugins';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import { BootstrapVue, BootstrapVueIcons } from 'bootstrap-vue'
+import axios from 'axios'
+import vueMoment from 'vue-moment'
 
+Vue.use(vueMoment)
 Vue.use(BootstrapVueIcons)
 Vue.use(BootstrapVue)
 
-// const apiKey = '1b50b6f16f3de7cfc77ffb4275f7291f'
-// Vue.use(VueKakaoSdk, { apiKey })
-
-window.Kakao.init('1b50b6f16f3de7cfc77ffb4275f7291f');
-
 Vue.config.productionTip = false;
+
+Vue.prototype.$axios = axios
 
 new Vue({
   router,

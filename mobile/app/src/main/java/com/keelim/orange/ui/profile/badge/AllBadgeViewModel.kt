@@ -29,7 +29,8 @@ class AllBadgeViewModel @Inject constructor(
             val data2 = myBadgeListUseCase.invoke(userId)
             setState(
                 BadgeState.Success(
-                    data1
+                    data1,
+                    data2,
                 )
             )
         } catch (e: Exception) {

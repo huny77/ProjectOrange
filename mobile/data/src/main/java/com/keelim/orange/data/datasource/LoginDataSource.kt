@@ -19,16 +19,18 @@ class LoginDataSource(
 ) {
 
   suspend fun login(username: String, password: String): Result<LoggedInUser> = withContext(dispatcher) {
-      val response = apiRequestFactory.retrofit.login(LoginCall(
-          username,
-          password
-      ))
-      if (response.isSuccessful && response.body()!!.response == "success") {
-          val token = response.body()!!.data
-          return@withContext Result.Success(LoggedInUser(username, username, token))
-      } else {
-          return@withContext Result.Error(IOException("Error logging in"))
-      }
+    val response = apiRequestFactory.retrofit.login(
+      LoginCall(
+        username,
+        password
+      )
+    )
+    if (response.isSuccessful && response.body()!!.response == "success") {
+      val token = response.body()!!.data1
+      return@withContext Result.Success(LoggedInUser(response.body()!!.data2.toString(), username, token))
+    } else {
+      return@withContext Result.Error(IOException("Error logging in"))
+    }
   }
 
   suspend fun logout() {
@@ -36,16 +38,18 @@ class LoginDataSource(
   }
 
   suspend fun signup(username: String, password: String, nickname: String): Result<LoggedInUser> = withContext(dispatcher) {
-      val response = apiRequestFactory.retrofit.signup(SignUpCall(
-          username,
-          nickname,
-          password,
-          username
-      ))
-      if (response.isSuccessful && response.body()!!.response == "success") {
-          return@withContext Result.Success(LoggedInUser(username, username, null))
-      } else {
-          return@withContext Result.Error(IOException("Error logging in"))
-      }
+    val response = apiRequestFactory.retrofit.signup(
+      SignUpCall(
+        username,
+        nickname,
+        password,
+        username
+      )
+    )
+    if (response.isSuccessful && response.body()!!.response == "success") {
+      return@withContext Result.Success(LoggedInUser(username, username, null))
+    } else {
+      return@withContext Result.Error(IOException("Error logging in"))
     }
+  }
 }

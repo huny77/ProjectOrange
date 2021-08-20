@@ -1,6 +1,5 @@
 package com.keelim.orange.data.response.feed
 
-
 import com.google.gson.annotations.SerializedName
 
 data class CategoryResponse(

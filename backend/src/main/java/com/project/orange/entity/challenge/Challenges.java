@@ -1,5 +1,6 @@
 package com.project.orange.entity.challenge;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.project.orange.entity.article.Articles;
 import com.project.orange.entity.user.UsersChallenges;
 import lombok.AllArgsConstructor;
@@ -60,9 +61,11 @@ public class Challenges {
     private String imagePath;
 
     // fetch-join으로 ?
+    @JsonIgnore
     @OneToMany(mappedBy = "challenge", fetch = FetchType.EAGER) // 주체가 아닌 애가 주인을 가리키기 위해서 쓰는 거
     private List<UsersChallenges> usersChallengesList = new ArrayList<>();
 
+    @JsonIgnore
     @OneToMany(mappedBy = "challenge")
     private List<Articles> articlesList = new ArrayList<>();
 }

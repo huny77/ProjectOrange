@@ -9,16 +9,24 @@ import com.keelim.orange.data.repository.NotificationRepository
 import com.keelim.orange.data.repository.NotificationRepositoryImpl
 import com.keelim.orange.data.repository.badge.BadgeRepository
 import com.keelim.orange.data.repository.badge.BadgeRepositoryImpl
+import com.keelim.orange.data.repository.favorite.FavoriteRepository
+import com.keelim.orange.data.repository.favorite.FavoriteRepositoryImpl
 import com.keelim.orange.data.repository.feed.FeedRepository
 import com.keelim.orange.data.repository.feed.FeedRepositoryImpl
+import com.keelim.orange.data.repository.fight.FightRepository
+import com.keelim.orange.data.repository.fight.FightRepositoryImpl
 import com.keelim.orange.data.repository.friends.FriendsRepository
 import com.keelim.orange.data.repository.friends.FriendsRepositoryImpl
 import com.keelim.orange.data.repository.history.HistoryRepository
 import com.keelim.orange.data.repository.history.HistoryRepositoryImpl
 import com.keelim.orange.data.repository.profile.ProfileRepository
 import com.keelim.orange.data.repository.profile.ProfileRepositoryImpl
-import com.keelim.orange.data.repository.season.RankingRepository
-import com.keelim.orange.data.repository.season.RankingRepositoryImpl
+import com.keelim.orange.data.repository.search.SearchRepository
+import com.keelim.orange.data.repository.search.SearchRepositoryImpl
+import com.keelim.orange.data.repository.season.SeasonRepository
+import com.keelim.orange.data.repository.season.SeasonRepositoryImpl
+import com.keelim.orange.data.repository.season.ranking.RankingRepository
+import com.keelim.orange.data.repository.season.ranking.RankingRepositoryImpl
 import com.keelim.orange.data.repository.season.create.CreateRepository
 import com.keelim.orange.data.repository.season.create.CreateRepositoryImpl
 import com.keelim.orange.data.repository.season.other.OtherRepository
@@ -29,8 +37,8 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
-import javax.inject.Singleton
 import kotlinx.coroutines.CoroutineDispatcher
+import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
@@ -145,7 +153,7 @@ object RepositoryModule {
   fun provideProfileRepository(
     @IoDispatcher dispatcher: CoroutineDispatcher,
     apiRequestFactory: ApiRequestFactory,
-  ): ProfileRepository{
+  ): ProfileRepository {
     return ProfileRepositoryImpl(
       dispatcher = dispatcher,
       apiRequestFactory = apiRequestFactory
@@ -157,8 +165,56 @@ object RepositoryModule {
   fun provideBadgeRepository(
     @IoDispatcher dispatcher: CoroutineDispatcher,
     apiRequestFactory: ApiRequestFactory,
-  ): BadgeRepository{
+  ): BadgeRepository {
     return BadgeRepositoryImpl(
+      dispatcher = dispatcher,
+      apiRequestFactory = apiRequestFactory
+    )
+  }
+
+  @Provides
+  @Singleton
+  fun provideFavoriteRepository(
+    @IoDispatcher dispatcher: CoroutineDispatcher,
+    db: AppDatabase,
+  ): FavoriteRepository {
+    return FavoriteRepositoryImpl(
+      dispatcher = dispatcher,
+      db = db
+    )
+  }
+
+  @Provides
+  @Singleton
+  fun provideSearchRepository(
+    @IoDispatcher dispatcher: CoroutineDispatcher,
+    apiRequestFactory: ApiRequestFactory,
+  ): SearchRepository {
+    return SearchRepositoryImpl(
+      dispatcher = dispatcher,
+      apiRequestFactory = apiRequestFactory
+    )
+  }
+
+  @Provides
+  @Singleton
+  fun provideFightRepository(
+    @IoDispatcher dispatcher: CoroutineDispatcher,
+    apiRequestFactory: ApiRequestFactory,
+  ): FightRepository{
+    return FightRepositoryImpl(
+      dispatcher = dispatcher,
+      apiRequestFactory = apiRequestFactory
+    )
+  }
+
+  @Provides
+  @Singleton
+  fun provideSeasonRepository(
+    @IoDispatcher dispatcher: CoroutineDispatcher,
+    apiRequestFactory: ApiRequestFactory,
+  ): SeasonRepository{
+    return SeasonRepositoryImpl(
       dispatcher = dispatcher,
       apiRequestFactory = apiRequestFactory
     )

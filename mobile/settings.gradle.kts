@@ -17,3 +17,4 @@ include(
     ":common",
     ":domain",
 )
+include(":compose")

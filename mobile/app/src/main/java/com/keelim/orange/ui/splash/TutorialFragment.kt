@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.DrawableRes
+import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.Fragment
 import com.keelim.orange.databinding.FragmentTutorialBinding
 import dagger.hilt.android.AndroidEntryPoint
@@ -38,7 +39,7 @@ class TutorialFragment(
     }
 
     private fun initViews() = with(binding){
-        root.background = resources.getDrawable(image, null)
+        root.background = ResourcesCompat.getDrawable(resources, image, null)
         title.text = title_string
         sub.text = sub_string
     }

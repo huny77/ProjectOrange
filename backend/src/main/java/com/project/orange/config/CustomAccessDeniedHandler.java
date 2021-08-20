@@ -32,20 +32,13 @@ public class CustomAccessDeniedHandler implements AccessDeniedHandler {
         ResponseEntity response = new ResponseEntity("error", HttpStatus.NOT_FOUND);
 
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-//        SecurityUser member = (SecurityUser)authentication.getPrincipal();
-//        Collection<GrantedAuthority> authorities = member.getAuthorities();
-
-//        if(hasRole(authorities,UserRole.ROLE_NOT_PERMITTED.name())){
-//            response.setMessage("사용자 인증메일을 받지 않았습니다.");
-//        }
 
         PrintWriter out = httpServletResponse.getWriter();
         String jsonResponse = objectMapper.writeValueAsString(response);
         out.print(jsonResponse);
 
     }
-    
-    //얜 위에서 쓰는건데 안 써버리니까 지워도 되려나
+
     private boolean hasRole(Collection<GrantedAuthority> authorites, String role){
         return authorites.contains(new SimpleGrantedAuthority(role));
     }

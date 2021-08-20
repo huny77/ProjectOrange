@@ -3,41 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_home">
-
-    <fragment
-        android:id="@+id/navigation_home"
-        android:name="com.keelim.orange.ui.home.HomeFragment"
-        android:label="홈"
-        tools:layout="@layout/fragment_home" >
-        <action
-            android:id="@+id/action_navigation_home_to_feedFragment"
-            app:destination="@id/feedFragment" />
-        <action
-            android:id="@+id/action_navigation_home_to_detailFragment"
-            app:destination="@id/detailFragment" />
-        <action
-            android:id="@+id/action_navigation_home_to_otherFragment"
-            app:destination="@id/otherFragment" />
-        <action
-            android:id="@+id/action_navigation_home_to_rankingFragment"
-            app:destination="@id/rankingFragment" />
-        <action
-            android:id="@+id/action_navigation_home_to_seasonFragment"
-            app:destination="@id/seasonFragment" />
-        <action
-            android:id="@+id/action_navigation_home_to_notificationFragment"
-            app:destination="@id/notificationFragment" />
-        <action
-            android:id="@+id/action_navigation_home_to_fightFragment"
-            app:destination="@id/fightFragment" />
-        <action
-            android:id="@+id/action_navigation_home_to_createFragment2"
-            app:destination="@id/createFragment2" />
-        <action
-            android:id="@+id/action_navigation_home_to_searchDetailFragment"
-            app:destination="@id/searchDetailFragment" />
-    </fragment>
+    app:startDestination="@+id/feedFragment">
 
     <fragment
         android:id="@+id/notificationFragment"
@@ -53,14 +19,36 @@
         <action
             android:id="@+id/action_feedFragment_to_profileFragment"
             app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_feedFragment_to_eventFragment"
+            app:destination="@id/eventFragment" />
+        <action
+            android:id="@+id/action_feedFragment_to_createChallengeFragmentDialog"
+            app:destination="@id/createChallengeFragmentDialog" />
+        <action
+            android:id="@+id/action_feedFragment_to_searchDetailFragment"
+            app:destination="@id/searchDetailFragment" />
+        <action
+            android:id="@+id/action_feedFragment_to_notificationFragment"
+            app:destination="@id/notificationFragment" />
     </fragment>
     <fragment
         android:id="@+id/fightFragment"
         android:name="com.keelim.orange.ui.fight.FightFragment"
-        android:label="FightFragment" />
+        android:label="FightFragment" >
+        <action
+            android:id="@+id/action_fightFragment_to_seasonFragment"
+            app:destination="@id/seasonFragment" />
+        <action
+            android:id="@+id/action_fightFragment_to_rankingFragment"
+            app:destination="@id/rankingFragment" />
+        <argument
+            android:name="challengId"
+            app:argType="integer" />
+    </fragment>
     <dialog
         android:id="@+id/otherFragment"
-        android:name="com.keelim.orange.ui.fight.sheet.other.OtherFragment"
+        android:name="com.keelim.orange.ui.season.sheet.other.OtherFragment"
         android:label="OtherFragment" />
     <fragment
         android:id="@+id/rankingFragment"
@@ -69,7 +57,20 @@
     <fragment
         android:id="@+id/seasonFragment"
         android:name="com.keelim.orange.ui.season.season.SeasonFragment"
-        android:label="SeasonFragment" />
+        android:label="SeasonFragment" >
+        <action
+            android:id="@+id/action_seasonFragment_to_createFragment2"
+            app:destination="@id/createFragment2" />
+        <action
+            android:id="@+id/action_seasonFragment_to_otherFragment"
+            app:destination="@id/otherFragment" />
+        <argument
+            android:name="challengeId"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_seasonFragment_to_commentFragment"
+            app:destination="@id/commentFragment" />
+    </fragment>
     <fragment
         android:id="@+id/detailFragment"
         android:name="com.keelim.orange.ui.detail.DetailFragment"
@@ -78,19 +79,36 @@
             android:name="uid"
             app:argType="string"
             android:defaultValue="0000" />
+        <argument
+            android:name="color"
+            app:argType="integer" />
+        <argument
+            android:name="search"
+            app:argType="com.keelim.orange.data.model.Search2"
+            app:nullable="true" />
+        <action
+            android:id="@+id/action_detailFragment_to_fightFragment"
+            app:destination="@id/fightFragment" />
+        <argument
+            android:name="challengeId"
+            app:argType="integer" />
     </fragment>
     <dialog
         android:id="@+id/createFragment2"
-        android:name="com.keelim.orange.ui.fight.sheet.create.CreateFragment"
-        android:label="CreateFragment" />
+        android:name="com.keelim.orange.ui.season.sheet.create.CreateFragment"
+        android:label="CreateFragment" >
+        <argument
+            android:name="challengeId"
+            app:argType="integer" />
+    </dialog>
     <fragment
         android:id="@+id/searchDetailFragment"
         android:name="com.keelim.orange.ui.search.SearchDetailFragment"
         android:label="fragment_search_detail"
         tools:layout="@layout/fragment_search_detail" >
         <action
-            android:id="@+id/action_searchDetailFragment_to_navigation_home"
-            app:destination="@id/navigation_home" />
+            android:id="@+id/action_searchDetailFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
     </fragment>
     <fragment
         android:id="@+id/favoriteFragment"
@@ -98,16 +116,41 @@
         android:label="FavoriteFragment" />
     <fragment
         android:id="@+id/profileFragment"
-        android:name="com.keelim.orange.ui.profile.ProfileFragment"
+        android:name="com.keelim.orange.ui.profile.profile.ProfileFragment"
         android:label="ProfileFragment" >
         <action
             android:id="@+id/action_profileFragment_to_favoriteFragment"
             app:destination="@id/favoriteFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_allBadgeFragment"
+            app:destination="@id/allBadgeFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_notificationFragment"
+            app:destination="@id/notificationFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
     </fragment>
     <fragment
         android:id="@+id/allBadgeFragment"
         android:name="com.keelim.orange.ui.profile.badge.AllBadgeFragment"
         android:label="AllBadgeFragment" />
+    <fragment
+        android:id="@+id/eventFragment"
+        android:name="com.keelim.orange.ui.event.EventFragment"
+        android:label="EventFragment" />
+    <dialog
+        android:id="@+id/createChallengeFragmentDialog"
+        android:name="com.keelim.orange.ui.feed.create.CreateChallengeFragmentDialog"
+        android:label="CreateChallengeFragmentDialog" />
+    <fragment
+        android:id="@+id/commentFragment"
+        android:name="com.keelim.orange.ui.season.comment.CommentFragment"
+        android:label="CommentFragment" >
+        <argument
+            android:name="article"
+            app:argType="com.keelim.orange.data.model.season.Article" />
+    </fragment>
 
 
 </navigation>

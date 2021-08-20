@@ -4,10 +4,14 @@ package com.keelim.orange.data.response.auth
 import com.google.gson.annotations.SerializedName
 
 data class AuthResponse(
-  @SerializedName("data")
-  val data: String?,
+  @SerializedName("data1")
+  var data1: String,
+  @SerializedName("data2")
+  var data2: Int,
+  @SerializedName("data3")
+  var data3: Int,
   @SerializedName("message")
-  val message: String,
+  var message: String,
   @SerializedName("response")
-  val response: String,
+  var response: String
 )

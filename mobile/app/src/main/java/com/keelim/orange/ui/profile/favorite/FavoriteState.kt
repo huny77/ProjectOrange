@@ -1,6 +1,6 @@
 package com.keelim.orange.ui.profile.favorite
 
-import com.keelim.orange.data.model.Favorite
+import com.keelim.orange.data.model.entity.Favorite
 
 sealed class FavoriteState {
   object UnInitialized : FavoriteState()

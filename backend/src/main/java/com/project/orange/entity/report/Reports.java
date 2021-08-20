@@ -23,7 +23,7 @@ public class Reports {
     private Articles article;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "reportsList")
+    @JoinColumn(name = "reportCategoryId")
     private ReportCategories reportCategories; //얘도 그냥 private ReportsCategories reportCategories; 로 바꿔야할듯
 
 //    @Builder

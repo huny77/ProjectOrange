@@ -90,27 +90,44 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
-
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>
+
+    <com.jama.carouselview.CarouselView
+        android:id="@+id/carousel_view"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        app:carouselOffset="center"
+        app:enableSnapping="true"
+        app:indicatorAnimationType="drop"
+        app:indicatorRadius="5"
+        app:layout_constraintTop_toBottomOf="@id/search_bar"
+        app:indicatorSelectedColor="@color/orange"
+        app:indicatorUnselectedColor="@color/orange_w"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:resource="@layout/image_carousel_item"
+        app:scaleOnScroll="false"
+        app:setAutoPlay="true"
+        app:setAutoPlayDelay="3000"
+        app:size="10"
+        app:spacing="10" />
 
     <TextView
         android:id="@+id/recent_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
-        android:text="최근 검색"
+        android:text="인기 검색어"
         android:textColor="@android:color/black"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/search_bar" />
+        app:layout_constraintTop_toBottomOf="@id/carousel_view" />
 
     <com.google.android.material.chip.ChipGroup
         android:id="@+id/chips"
         android:layout_width="0dp"
-        android:layout_height="80dp"
+        android:layout_height="wrap_content"
         android:layout_margin="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -121,7 +138,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:text="검색된 챌린지"
+        android:text="최근 인기있는 챌린지"
         android:textColor="@android:color/black"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -140,6 +157,20 @@
         app:layout_constraintTop_toBottomOf="@id/search_title"
         tools:itemCount="10"
         tools:listitem="@layout/item_search" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btn_create"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:backgroundTint="@color/orange"
+        android:src="@drawable/ic_baseline_exposure_plus_1_24"
+        app:borderWidth="0dp"
+        android:layout_marginBottom="10dp"
+        app:fabSize="auto"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

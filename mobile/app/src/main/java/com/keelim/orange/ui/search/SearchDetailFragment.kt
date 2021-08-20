@@ -5,34 +5,36 @@ import android.view.KeyEvent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.inputmethod.EditorInfo
-import android.widget.TextView
 import androidx.core.view.doOnNextLayout
-import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.keelim.orange.common.toast
-import com.keelim.orange.data.model.History
+import com.keelim.orange.data.model.Search2
+import com.keelim.orange.data.model.entity.History
 import com.keelim.orange.data.model.samples
 import com.keelim.orange.databinding.FragmentSearchDetailBinding
-import com.keelim.orange.ui.noti.NotificationState
 import com.keelim.orange.utils.SpringAddItemAnimator
 import dagger.hilt.android.AndroidEntryPoint
-import timber.log.Timber
-import java.time.LocalTime
-import java.util.Date
 
 @AndroidEntryPoint
 class SearchDetailFragment: Fragment() {
     private var _binding: FragmentSearchDetailBinding? = null
     private val binding get() = _binding!!
-    private val searchViewModel:SearchViewModel by viewModels()
-    private lateinit var  searchAdapter:SearchAdapter
+    private val searchViewModel: SearchViewModel by viewModels()
+    private lateinit var searchAdapter: SearchAdapter
+    private val resultAdapter = SearchRecyclerAdapter2(
+        clickListener = {
+            findNavController().navigate(
+                SearchDetailFragmentDirections.actionSearchDetailFragmentToDetailFragment(it.challengeId.toString(), -1, it, -1)
+            )
+        }
+    )
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View {
         _binding = FragmentSearchDetailBinding.inflate(inflater, container, false)
         return binding.root
@@ -76,8 +78,13 @@ class SearchDetailFragment: Fragment() {
 
         editQuery.setOnKeyListener { v, keyCode, event ->
             if (keyCode == KeyEvent.KEYCODE_ENTER && event.action == KeyEvent.ACTION_DOWN) {
-//                search(binding.searchEditText.text.toString())
-                searchViewModel.insertHistory(History(null, editQuery.text.toString(), ""))
+                val query = editQuery.text.toString()
+                if (query.isNotEmpty()) {
+                    searchViewModel.insertHistory(History(null, query, ""))
+                    searchViewModel.search(query)
+                } else {
+                    requireContext().toast("검색어를 입력해주세요")
+                }
                 return@setOnKeyListener true
             }
             return@setOnKeyListener false
@@ -87,24 +94,42 @@ class SearchDetailFragment: Fragment() {
 
     private fun observeData() = searchViewModel.state.observe(viewLifecycleOwner) {
         when (it) {
-          is HistoryState.UnInitialized -> handleUnInitialized()
-          is HistoryState.Loading -> handleLoading()
-          is HistoryState.Success -> handleSuccess(it.data)
-          is HistoryState.Error -> handleError()
+            is HistoryState.UnInitialized -> handleUnInitialized()
+            is HistoryState.Loading -> handleLoading()
+            is HistoryState.Success -> handleSuccess(it.data)
+            is HistoryState.Error -> handleError()
+            is HistoryState.SearchSuccess -> handleSearchSuccess(it.data)
         }
-      }
+    }
 
-      private fun handleUnInitialized() {
-      }
-      private fun handleLoading() {
-        requireActivity().toast("검색 이력을 불러오고 있습니다.")
-      }
-      private fun handleSuccess(data:List<History>) {
+    private fun handleUnInitialized() {
+    }
+
+    private fun handleLoading() {
+//        requireActivity().toast("검색 이력을 불러오고 있습니다.")
+    }
+
+    private fun handleSuccess(data: List<History>) {
         searchAdapter.apply {
             submitList(data)
         }
-      }
-      private fun handleError() {
+    }
+
+    private fun handleError() {
         requireActivity().toast("에러가 발생했습니다. 다시 한번 로드해주세요")
-      }
+    }
+
+    private fun handleSearchSuccess(data: List<Search2>) = with(binding) {
+//        requireContext().toast(data.toString())
+        if(data.isNotEmpty()){
+            searchResults.visibility = View.INVISIBLE
+            searchRecycler.apply {
+                adapter = resultAdapter
+            }
+            searchRecycler.visibility = View.VISIBLE
+            resultAdapter.submitList(data)
+        } else {
+            requireContext().toast("검색된 챌린지가 없습니다.")
+        }
+    }
 }

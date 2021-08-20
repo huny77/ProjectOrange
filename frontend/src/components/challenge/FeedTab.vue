@@ -45,6 +45,11 @@ export default {
       tab: null,
     }
   },
+  // props: {
+  //   challengeItems: {
+  //     type: Object,
+  //   }
+  // }
 }
 </script>
 
